@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-bdo9YIUtyGIjbcKhrvO8CRIjk+wKn7TWhBebgdyutmA='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-RjsqJH+XkvosT1Yav811r8BEqkGYn5oPUfVLFwxur6M='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zolomath · คณิตน้อยนักคลิก</title>
@@ -92,6 +92,8 @@ pointer-events:none;opacity:0;transition:opacity .2s,transform .25s;text-shadow:
 .parentinfo h3{margin:12px 0 4px}
 .parentinfo li{margin:2px 0}
 .brand{margin:-10px 0 0;font-size:18px;font-weight:700;letter-spacing:4px;color:#7048e8;text-transform:uppercase}
+.credit{margin:0;font-size:14px;color:#6c5c8a;text-align:center}
+.credit b{color:#e64980}
 </style>
 <style>
 .eq{position:absolute;left:50%;top:8%;transform:translateX(-50%);font-size:clamp(40px,8vw,88px);font-weight:700;background:#fff;
@@ -472,6 +474,7 @@ header { padding: 4px 8px; }
     <button class="pill" id="importBtn">📥 มีรหัสสำรอง? นำเข้าที่นี่</button>
     <button class="pill" id="parentBtn">👨‍👩‍👧 สำหรับผู้ปกครอง</button>
   </div>
+  <p class="credit">สร้างด้วย 💖 โดย <b>ปะป๊าน้องตั้งโอ๋</b></p>
 </section>
 
 <!-- HOME -->
@@ -513,6 +516,7 @@ header { padding: 4px 8px; }
     <button class="mode hot" data-m="mine"><i class="new">ใหม่!</i><div class="ico" data-art="pickaxe"></div><b>นักขุดอัญมณี</b><span>ขุดคู่บล็อกหาสมบัติ</span></button>
   </div>
   <p class="tip"><button class="linkbtn" id="parentBtn2">👨‍👩‍👧 สำหรับผู้ปกครอง</button> เหมาะกับเด็ก 6–8 ปี ตอบผิดได้ไม่จำกัด ไม่มีการจับเวลา ใช้ได้ทั้งเมาส์และจอสัมผัส</p>
+  <p class="credit">สร้างด้วย 💖 โดย <b>ปะป๊าน้องตั้งโอ๋</b></p>
 </section>
 
 <div id="homeBuddy" style="display:none"></div>
@@ -1531,6 +1535,7 @@ const m = ui.modal(`<h2 style="margin:0">👨‍👩‍👧 สำหรับ�
 <h3>⏰ เวลาเล่น</h3>
 <ul><li>แนะนำวันละไม่เกิน 20–30 นาที และพักสายตาทุก 20 นาที</li></ul>
 </div>
+<p class="credit" style="margin:10px 0">Zolomath สร้างด้วย 💖 โดย <b>ปะป๊าน้องตั้งโอ๋</b></p>
 <button class="bigbtn a" data-x>เข้าใจแล้ว</button>`, { fixed: true });
 $('[data-x]', m).onclick = () => m.remove();
 },
