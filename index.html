@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-hFsVJs/8UlNJmum1wqmq5wSp4mavMZ2Aw+GeTaxacws='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-MTO5/MG44Rj8pH7JpCfJm6pJilxqgK/cW5C5auyg+Tc='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zolomath · คณิตน้อยนักคลิก</title>
@@ -249,6 +249,64 @@ font-size:calc(var(--s)*.42);cursor:pointer;box-shadow:0 5px 0 #0000001a;touch-a
 .dot.done::after{content:"⭐";position:absolute;top:-38%;right:-28%;font-size:calc(var(--s)*.4)}
 .dot.hintme{animation:pulse .8s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 #ff6b6b88}50%{box-shadow:0 0 0 18px #ff6b6b00}}
+.bsay2{position:relative;background:#fff;border-radius:18px;padding:8px 14px;font-size:calc(clamp(16px,2.3vw,22px)*var(--k,1));font-weight:600;line-height:1.35;box-shadow:0 4px 0 #0000000f;max-width:calc(360px*var(--k,1))}
+.bsay2 b{color:#e8590c}
+.mktBtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:6px 0 10px}
+.mktBtns .checkBtn,.clockside .checkBtn{position:static}
+.checkBtn.soft{background:#fff;color:#4a3b5c;box-shadow:0 6px 0 #dee2e6}
+.mghost{position:absolute;z-index:60;pointer-events:none;transform:translate(-50%,-50%) scale(1.12);filter:drop-shadow(0 8px 6px #3a255040)}
+.clockgame{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,48px);padding:10px}
+.clockgame.portrait{flex-direction:column;justify-content:flex-start;gap:10px}
+.clockface{width:var(--cs,300px);height:var(--cs,300px);flex:none;touch-action:none}
+.clockface svg{width:100%;height:100%;display:block;cursor:grab;overflow:visible}
+.clockface .cnum{font:700 17px system-ui,sans-serif;fill:#4a3b5c}
+.clockface .cnum.glow{fill:#e8590c;font-size:22px;paint-order:stroke;stroke:#ffe066;stroke-width:5px}
+.clockface .hand{transition:transform .08s}
+.clockface .hand.active line:nth-child(2){filter:brightness(1.15)}
+.clockside{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:360px}
+.clockgame.portrait .clockside{flex-direction:column}
+.clockgame.portrait .clockside .pet{display:none}
+.clockopts{display:grid;gap:10px;width:min(340px,90vw)}
+.clockopts .ans{font-size:clamp(20px,3vw,28px);padding:12px 10px}
+.clockopts .ans.right,.mktopts .ans.right{background:#06d6a0;color:#fff;box-shadow:0 6px 0 #04a57b}
+.mkt{position:absolute;inset:0;display:flex;flex-direction:column;padding:8px 12px 0;gap:6px}
+.mktTop{display:flex;align-items:flex-end;justify-content:center;gap:16px;flex-wrap:wrap}
+.cust{display:flex;align-items:center;gap:8px}
+.goods{display:flex;flex-wrap:wrap;max-width:200px;gap:2px;background:#fff8;border-radius:16px;padding:6px}
+.mktMid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:0}
+.paid{display:flex;align-items:center;gap:8px;background:#fff;border-radius:16px;padding:2px 14px;box-shadow:0 4px 0 #0000000f}
+.paid small{font-size:16px;font-weight:700;color:#666}
+.tray{width:min(calc(620px*var(--k,1)),100%);min-height:calc(96px*var(--k,1));background:#c98b55;border:4px dashed #ffffffcc;border-radius:24px;padding:4px 8px 8px}
+.tray.over{outline:6px solid #ffd166}
+.tray .lab{color:#fff;font-weight:700;font-size:clamp(16px,2.4vw,22px);text-align:center;text-shadow:2px 2px 0 #00000030}
+.tcoins{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;min-height:48px;align-items:center}
+.tcoins .empty{color:#fff;opacity:.8;font-size:15px}
+.tmoney{border:none;background:none;padding:0;cursor:pointer;line-height:0}
+.tmoney.isnote svg{margin:-10px 0}
+.drawer{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px;background:#fff;border-radius:22px;padding:6px 10px;box-shadow:0 6px 0 #0000000f}
+.dmoney{cursor:grab;touch-action:none;line-height:0;transition:transform .1s}
+.dmoney:hover{transform:translateY(-3px) scale(1.06)}
+.dmoney.isnote svg{margin:-12px 0}
+.mktopts{grid-template-columns:repeat(3,minmax(90px,150px))}
+.mktopts .ans{font-size:clamp(22px,4vw,34px)}
+.share{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding:8px 10px 0;gap:8px}
+.jar{position:relative;width:min(calc(640px*var(--k,1)),100%);background:#d0ebff;border:4px dashed #ffffffcc;border-radius:24px;padding:4px 8px 8px}
+.jar .lab{text-align:center;font-weight:700;font-size:clamp(16px,2.3vw,21px);color:#1c7ed6}
+.cbox{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:2px;min-height:40px}
+.cookie{cursor:grab;touch-action:none;line-height:0}
+.plates{flex:1;display:grid;grid-template-columns:repeat(var(--np),minmax(0,1fr));gap:8px;width:min(calc(900px*var(--k,1)),100%);align-content:center;min-height:0}
+.plate{display:flex;flex-direction:column;align-items:center;border-radius:20px;padding:4px;transition:background .15s}
+.plate.over,.jar.over{background:#fff3bf}
+.pdish{position:relative;width:100%;max-width:calc(190px*var(--k,1));min-height:calc(84px*var(--k,1));display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(ellipse at 50% 55%,#f1f3f5 0 52%,#fff 54%);border:3px solid #4a3b5c;box-shadow:inset 0 -6px 0 #3a25500f,0 5px 0 #3a25501a}
+.pdish .cbox{position:relative;padding:14px 18px}
+.pcount{margin-top:4px;font-weight:700;font-size:calc(18px*var(--k,1));color:#4a3b5c;background:#fff;border-radius:999px;padding:0 10px}
+.cakepals{display:flex;flex-wrap:wrap;justify-content:center;gap:2px}
+.cakebox{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
+.cakebox svg{height:100%;max-height:min(64vh,520px);max-width:96%;aspect-ratio:1;touch-action:none;cursor:crosshair;overflow:visible}
+.cakebox .ccut{stroke:#4a3b5c;stroke-width:4;stroke-linecap:round}
+.cakebox .cguide{stroke:#7048e8;stroke-width:3;stroke-dasharray:6 6;opacity:.8}
+.cakebox .knife{stroke:#adb5bd;stroke-width:5;stroke-linecap:round;stroke-dasharray:2 6}
+.cakebox .frac{font:800 13px system-ui,sans-serif;fill:#4a3b5c}
 </style>
 <style>
 .pet{position:relative;display:inline-block;width:var(--s);height:var(--s);flex:none}
@@ -443,6 +501,13 @@ header { padding: 4px 8px; }
 #qbox .hint { font-size: 13px; }
 .hbtn, #progress { padding: 4px 10px; font-size: 18px; }
 }
+@media (max-width: 700px) {
+.plates { grid-template-columns: repeat(var(--npm), minmax(0, 1fr)); }
+.pdish { min-height: 78px; }
+.mktTop { gap: 6px; }
+.bsay2 { font-size: 16px; padding: 6px 10px; }
+.cust .pet { --s: 72px !important; }
+}
 </style>
 </head>
 <body>
@@ -505,6 +570,9 @@ header { padding: 4px 8px; }
   </div>
   <div class="season" id="seasonLine"></div>
   <div class="modes">
+    <button class="mode hot" data-m="clock"><i class="new">ใหม่!</i><div class="ico" data-art="wallclock"></div><b>นาฬิกามอนสเตอร์</b><span>ลากเข็มนาฬิกาให้ตรงเวลา</span></button>
+    <button class="mode hot" data-m="market"><i class="new">ใหม่!</i><div class="ico" data-art="stall"></div><b>ตลาดนัดหนูน้อย</b><span>ขายของ ทอนเงินให้ถูก</span></button>
+    <button class="mode hot" data-m="share"><i class="new">ใหม่!</i><div class="ico" data-art="cake"></div><b>แบ่งขนมให้เพื่อน</b><span>แจกคุกกี้ ตัดเค้กให้เท่ากัน</span></button>
     <button class="mode hot" data-m="race"><i class="new">ใหม่!</i><div class="ico" data-art="car"></div><b>ซิ่งตัวเลข</b><span>ขับผ่านประตูคำตอบ แซงคู่แข่ง!</span></button>
     <button class="mode hot" data-m="eggs"><i class="new">ใหม่!</i><div class="ico" data-art="egg_gold"></div><b>ฟาร์มไข่มอนสเตอร์</b><span>เก็บเหรียญ ฟักไข่ สะสมให้ครบ</span></button>
     <button class="mode hot" data-m="ghost"><i class="new">ใหม่!</i><div class="ico" data-art="ghost"></div><b>บ้านผีไฟฉาย</b><span>ส่องไฟหาผีที่ถือคำตอบ</span></button>
@@ -843,7 +911,56 @@ seasonPoints() { return this.data.seasons[Season.id()] || 0; }
 const store = new PlayerStore();
 return { MAX_ENERGY, defaultData, Season, store };
 })();
+__mods["js/art/shade.js"] = (() => {
+const SH = '#3a2550';
+const DEFS = `<svg id="zdefs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<radialGradient id="zSph" cx=".42" cy=".38" r=".72" fx=".3" fy=".24">
+<stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".22" stop-color="#fff" stop-opacity=".18"/>
+<stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset=".78" stop-color="${SH}" stop-opacity=".06"/>
+<stop offset="1" stop-color="${SH}" stop-opacity=".34"/></radialGradient>
+<radialGradient id="zSoft" cx=".42" cy=".38" r=".75" fx=".32" fy=".26">
+<stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/>
+<stop offset=".8" stop-color="${SH}" stop-opacity=".05"/><stop offset="1" stop-color="${SH}" stop-opacity=".26"/></radialGradient>
+<linearGradient id="zBox" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/>
+<stop offset=".75" stop-color="${SH}" stop-opacity=".04"/><stop offset="1" stop-color="${SH}" stop-opacity=".26"/></linearGradient>
+<linearGradient id="zSide" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/>
+<stop offset="1" stop-color="${SH}" stop-opacity=".28"/></linearGradient>
+<radialGradient id="zShd"><stop offset="0" stop-color="${SH}" stop-opacity=".38"/><stop offset=".6" stop-color="${SH}" stop-opacity=".16"/>
+<stop offset="1" stop-color="${SH}" stop-opacity="0"/></radialGradient>
+</defs></svg>`;
+function ensureShadeDefs() {
+if (typeof document === 'undefined' || document.getElementById('zdefs')) return;
+const add = () => document.getElementById('zdefs') || document.body.insertAdjacentHTML('afterbegin', DEFS);
+if (document.body) add(); else document.addEventListener('DOMContentLoaded', add);
+}
+ensureShadeDefs();
+const TAG_RE = /<(path|ellipse|circle|rect|polygon)\b[^>]*\/>/;
+function shadeOf(markup, grad = 'zSph') {
+const re = new RegExp(TAG_RE.source, 'g');
+for (const m of markup.matchAll(re)) {
+const tag = m[0];
+if (/fill="none"/.test(tag)) continue;
+let t = tag.replace(/\s(stroke(-[a-z]+)?|opacity|class|style)="[^"]*"/g, '');
+t = /fill="[^"]*"/.test(t) ? t.replace(/fill="[^"]*"/, `fill="url(#${grad})"`) : t.replace(/\/>$/, ` fill="url(#${grad})"/>`);
+return t.replace(/\/>$/, ' pointer-events="none"/>');
+}
+return '';
+}
+const shade = (markup, grad = 'zSph') => markup + shadeOf(markup, grad);
+const glossEye = (x, y, rx = 4.6, ry = 5.4, c = '#2b2d42', hl = '#fff') =>
+`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${c}"/>`
++ (c === '#fff' ? '' : `<ellipse cx="${x}" cy="${y + ry * 0.45}" rx="${rx * 0.7}" ry="${ry * 0.35}" fill="#7a6a9a" opacity=".55"/>`)
++ `<circle cx="${x + rx * 0.35}" cy="${y - ry * 0.38}" r="${rx * 0.42}" fill="${hl}"/>`
++ `<circle cx="${x - rx * 0.4}" cy="${y + ry * 0.4}" r="${rx * 0.18}" fill="${hl}" opacity=".85"/>`;
+const floorShadow = (cx = 50, cy = 94, rx = 30, ry = 5) =>
+`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#zShd)"/>`;
+return { ensureShadeDefs, shadeOf, shade, glossEye, floorShadow };
+})();
 __mods["js/art/art.js"] = (() => {
+const { shade, shadeOf, glossEye, floorShadow } = __mods["js/art/shade.js"];
 const O='#4a3b5c';
 const SW=`stroke="${O}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"`;
 const HL=(x,y,rx,ry,r=-30)=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#fff" opacity=".55" transform="rotate(${r} ${x} ${y})"/>`;
@@ -855,6 +972,12 @@ const mouth=mood==='o'?`<ellipse cx="${x}" cy="${y+5*s}" rx="${2*s}" ry="${2.4*s
 return eyes+`<ellipse cx="${x-e-4*s}" cy="${y+3.6*s}" rx="${3*s}" ry="${1.8*s}" fill="#ff8fab" opacity=".6"/><ellipse cx="${x+e+4*s}" cy="${y+3.6*s}" rx="${3*s}" ry="${1.8*s}" fill="#ff8fab" opacity=".6"/>`+mouth;
 }
 const EGGP='M50 7 C73 7 88 42 88 62 C88 83 71 95 50 95 C29 95 12 83 12 62 C12 42 27 7 50 7Z';
+const MONEY={
+coin:(v,face,rim,bi)=>`<circle cx="50" cy="50" r="44" fill="${bi?rim:face}" ${SW}/>`+(bi?`<circle cx="50" cy="50" r="31" fill="${face}" stroke="${O}" stroke-width="2"/>`:`<circle cx="50" cy="50" r="36" fill="none" stroke="${rim}" stroke-width="5"/>`)
++`<text x="50" y="${v>9?63:66}" text-anchor="middle" font-size="${v>9?38:46}" font-weight="800" font-family="system-ui,sans-serif" fill="${O}">${v}</text>`+shadeOf('<circle cx="50" cy="50" r="44" fill="#000"/>'),
+note:(v,c,d)=>`<rect x="2" y="22" width="96" height="56" rx="7" fill="${c}" ${SW}/><rect x="9" y="29" width="82" height="42" rx="4" fill="none" stroke="${d}" stroke-width="2" stroke-dasharray="4 3"/><circle cx="72" cy="50" r="13" fill="#fff" opacity=".55"/>`
++`<text x="34" y="${v>99?61:62}" text-anchor="middle" font-size="${v>99?28:32}" font-weight="800" font-family="system-ui,sans-serif" fill="${d}">${v}</text><text x="72" y="55" text-anchor="middle" font-size="13" font-weight="700" font-family="system-ui,sans-serif" fill="${d}">บาท</text>`+shadeOf('<rect x="2" y="22" width="96" height="56" rx="7" fill="#000"/>','zBox'),
+};
 const ART={
 apple:()=>`<path d="M50 30 C38 20 14 22 14 52 C14 76 32 92 44 92 C48 92 49 90 50 90 C51 90 52 92 56 92 C68 92 86 76 86 52 C86 22 62 20 50 30Z" fill="#ff5d73" ${SW}/>${HL(30,44,6,10)}<path d="M50 30 Q50 18 56 10" fill="none" ${SW}/><path d="M54 18 Q70 6 78 16 Q66 26 54 18Z" fill="#69db7c" ${SW}/>${FACE(50,58,1.2)}`,
 appleG:()=>ART.apple().replace('#ff5d73','#8ce99a').replace('#69db7c','#2f9e44'),
@@ -901,7 +1024,27 @@ aquarium:()=>`<rect x="10" y="20" width="80" height="62" rx="8" fill="#a5d8ff" $
 arcade:()=>`<path d="M22 92 V20 Q22 8 34 8 H66 Q78 8 78 20 V92Z" fill="#cc5de8" ${SW}/><rect x="30" y="20" width="40" height="30" rx="4" fill="#212529" ${SW}/><rect x="38" y="30" width="6" height="6" fill="#69db7c"/><rect x="54" y="34" width="6" height="6" fill="#ff6b6b"/><rect x="26" y="56" width="48" height="12" fill="#9c36b5" ${SW}/><circle cx="40" cy="62" r="3" fill="#ffe066"/><circle cx="58" cy="62" r="3" fill="#ff6b6b"/><circle cx="66" cy="62" r="3" fill="#4dabf7"/>`,
 castle:()=>`<path d="M14 92 V34 H24 V26 H32 V34 H40 V26 H48 V34 H52 V26 H60 V34 H68 V26 H76 V34 H86 V92Z" fill="#dee2e6" ${SW}/><path d="M42 92 V70 Q50 60 58 70 V92Z" fill="#c08457" ${SW}/><path d="M50 26 V8 L64 13 L50 18" fill="#ff6b6b" ${SW}/><rect x="24" y="46" width="10" height="12" rx="5" fill="#74c0fc" ${SW}/><rect x="66" y="46" width="10" height="12" rx="5" fill="#74c0fc" ${SW}/>`,
 rocket:()=>`<path d="M50 6 Q74 26 70 70 H30 Q26 26 50 6Z" fill="#f1f3f5" ${SW}/><circle cx="50" cy="38" r="10" fill="#74c0fc" ${SW}/><path d="M30 52 L14 76 L30 72Z M70 52 L86 76 L70 72Z" fill="#ff6b6b" ${SW}/><path d="M38 70 Q50 98 62 70Z" fill="#ffa94d" ${SW}/><path d="M44 70 Q50 86 56 70Z" fill="#ffe066"/>`,
+ball:()=>`${floorShadow(50,93,28,4)}<circle cx="50" cy="58" r="34" fill="#fff" ${SW}/><path d="M50 46 L61 54 L57 67 H43 L39 54Z" fill="${O}"/><path d="M50 46 V26 M61 54 L80 47 M57 67 L68 86 M43 67 L32 86 M39 54 L20 47" stroke="${O}" stroke-width="2.5"/><path d="M41 26 Q50 23 59 26 L57 31 H43Z M16 50 L22 44 L25 56 L18 62Z M84 50 L78 44 L75 56 L82 62Z" fill="${O}"/>${shadeOf('<circle cx="50" cy="58" r="34" fill="#fff"/>')}`,
+kite:()=>`<path d="M50 80 Q42 88 50 94 Q58 98 52 99" fill="none" stroke="${O}" stroke-width="2"/><path d="M44 88 L52 84 L50 92Z M48 96 L56 94 L52 100Z" fill="#ffd43b" ${SW}/>${shade(`<path d="M50 6 L82 38 L50 82 L18 38Z" fill="#ff8787" ${SW}/>`,'zBox')}<path d="M50 6 L50 82 M18 38 H82" stroke="${O}" stroke-width="2"/><path d="M50 6 L82 38 L50 38Z" fill="#ffd43b" opacity=".85"/><path d="M50 38 L50 82 L18 38Z" fill="#74c0fc" opacity=".85"/><path d="M50 6 L82 38 L50 82 L18 38Z" fill="none" ${SW}/>${FACE(50,40,0.75)}`,
+drum:()=>`${floorShadow(50,92,34,5)}${shade(`<path d="M22 40 V76 Q50 92 78 76 V40Z" fill="#ff6b6b" ${SW}/>`,'zSide')}<path d="M24 50 L33 78 L42 52 L50 82 L58 52 L67 78 L76 50" fill="none" stroke="#ffe066" stroke-width="3" stroke-linejoin="round"/><path d="M22 76 Q50 92 78 76" fill="none" ${SW}/>${shade(`<ellipse cx="50" cy="40" rx="28" ry="9" fill="#fff4e0" ${SW}/>`,'zSoft')}<path d="M24 16 L54 38 M78 14 L48 38" stroke="${O}" stroke-width="7" stroke-linecap="round"/><path d="M24 16 L54 38 M78 14 L48 38" stroke="#e8b273" stroke-width="3.5" stroke-linecap="round"/><circle cx="24" cy="16" r="5" fill="#fff" ${SW}/><circle cx="78" cy="14" r="5" fill="#fff" ${SW}/>`,
+globe:()=>`${floorShadow(50,93,24,4)}<path d="M50 74 V86" stroke="${O}" stroke-width="7"/><path d="M50 74 V86" stroke="#fab005" stroke-width="3"/>${shade(`<ellipse cx="50" cy="87" rx="20" ry="6" fill="#c08457" ${SW}/>`,'zSoft')}<circle cx="50" cy="42" r="28" fill="#74c0fc" ${SW}/><path d="M30 28 Q38 20 46 26 Q50 34 42 38 Q40 46 32 44 Q24 38 30 28Z M56 40 Q66 34 72 42 Q74 54 64 60 Q58 66 54 58 Q58 50 56 40Z M48 60 Q54 62 52 66 Q46 66 48 60Z" fill="#69db7c" stroke="${O}" stroke-width="2"/>${shadeOf('<circle cx="50" cy="42" r="28" fill="#000"/>')}<path d="M50 8 A34 34 0 0 1 50 76" fill="none" stroke="${O}" stroke-width="7" stroke-linecap="round"/><path d="M50 8 A34 34 0 0 1 50 76" fill="none" stroke="#fab005" stroke-width="3.5" stroke-linecap="round"/>${FACE(46,44,0.8)}`,
+guitar:()=>`<g transform="rotate(-14 50 56)">${floorShadow(50,95,24,3)}<rect x="45" y="6" width="10" height="44" rx="3" fill="#a0673a" ${SW}/><rect x="42" y="2" width="16" height="12" rx="4" fill="#7f4f24" ${SW}/>${shade(`<path d="M50 32 C66 32 68 46 62 54 C78 58 76 94 50 94 C24 94 22 58 38 54 C32 46 34 32 50 32Z" fill="#ff922b" ${SW}/>`)}<circle cx="50" cy="60" r="8" fill="${O}"/><rect x="40" y="76" width="20" height="5" rx="2" fill="#7f4f24" ${SW}/><path d="M47.5 8 V78 M50 8 V78 M52.5 8 V78" stroke="#f8f9fa" stroke-width=".9"/><circle cx="40" cy="6" r="2.4" fill="#fff" ${SW}/><circle cx="60" cy="6" r="2.4" fill="#fff" ${SW}/></g>`,
+microscope:()=>`${floorShadow(50,93,32,4)}<path d="M64 80 V60 Q64 38 48 32" fill="none" stroke="${O}" stroke-width="13" stroke-linecap="round"/><path d="M64 80 V60 Q64 38 48 32" fill="none" stroke="#91a7ff" stroke-width="7.5" stroke-linecap="round"/>${shade(`<rect x="20" y="80" width="60" height="11" rx="5" fill="#748ffc" ${SW}/>`,'zBox')}<rect x="24" y="58" width="36" height="7" rx="3" fill="#dee2e6" ${SW}/><rect x="34" y="55" width="16" height="3" rx="1" fill="#a5d8ff"/><g transform="rotate(-24 44 30)">${shade(`<rect x="36" y="10" width="16" height="36" rx="5" fill="#dbe4ff" ${SW}/>`,'zSide')}<rect x="34" y="4" width="20" height="8" rx="3" fill="#5c7cfa" ${SW}/><rect x="39" y="45" width="10" height="9" rx="2" fill="#495057" ${SW}/></g><circle cx="66" cy="62" r="5" fill="#ffd43b" ${SW}/>`,
+telescope:()=>`${floorShadow(50,94,34,4)}<path d="M50 56 L26 92 M50 56 L74 92 M50 56 V90" fill="none" stroke="${O}" stroke-width="8" stroke-linecap="round"/><path d="M50 56 L26 92 M50 56 L74 92 M50 56 V90" fill="none" stroke="#c08457" stroke-width="4" stroke-linecap="round"/><g transform="rotate(-30 50 48)">${shade(`<rect x="16" y="39" width="64" height="18" rx="8" fill="#5c7cfa" ${SW}/>`,'zBox')}<path d="M40 39 V57 M54 39 V57" stroke="#ffd43b" stroke-width="3"/>${shade(`<rect x="74" y="35" width="13" height="26" rx="5" fill="#ffd43b" ${SW}/>`,'zBox')}<rect x="8" y="43" width="10" height="10" rx="3" fill="#343a40" ${SW}/></g><circle cx="50" cy="54" r="5" fill="#495057" ${SW}/><path d="M86 4 l2 5 5 1 -4 3 1 5 -4 -3 -4 3 1 -5 -4 -3 5 -1Z" fill="#ffe066" ${SW}/>`,
+rockhorse:()=>`${floorShadow(50,95,42,4)}<path d="M8 76 Q50 100 92 76" fill="none" stroke="${O}" stroke-width="10" stroke-linecap="round"/><path d="M8 76 Q50 100 92 76" fill="none" stroke="#c08457" stroke-width="5.5" stroke-linecap="round"/><path d="M32 58 L24 82 M42 62 L40 88 M62 62 L64 88 M72 58 L80 82" stroke="${O}" stroke-width="8" stroke-linecap="round"/><path d="M32 58 L24 82 M42 62 L40 88 M62 62 L64 88 M72 58 L80 82" stroke="#fff4e0" stroke-width="4" stroke-linecap="round"/><path d="M78 48 Q98 48 94 70 Q88 60 76 58Z" fill="#ff8fab" ${SW}/>${shade(`<ellipse cx="54" cy="54" rx="28" ry="14" fill="#fff4e0" ${SW}/>`)}${shade(`<path d="M36 52 L26 28 L40 22 L48 46Z" fill="#fff4e0" ${SW}/>`,'zSoft')}<path d="M28 20 L32 6 L38 20Z" fill="#fff4e0" ${SW}/>${shade(`<ellipse cx="22" cy="28" rx="15" ry="10" fill="#fff4e0" ${SW} transform="rotate(-22 22 28)"/>`)}<path d="M36 14 Q46 18 40 26 Q50 28 44 36 Q54 38 48 46" fill="none" stroke="#ff8fab" stroke-width="5" stroke-linecap="round"/><path d="M46 42 Q56 38 66 42 L64 54 Q56 51 48 54Z" fill="#ff6b6b" ${SW}/>${glossEye(24,24,2.4,2.8,O)}<circle cx="10" cy="32" r="1.4" fill="${O}"/><ellipse cx="22" cy="33" rx="3.5" ry="2" fill="#ff8fab" opacity=".6"/>`,
+tent:()=>`${floorShadow(50,92,46,5)}${shade(`<path d="M50 14 L90 88 H10Z" fill="#ffa94d" ${SW}/>`,'zSide')}<path d="M50 14 L30 88 M50 14 L70 88" stroke="#fff3bf" stroke-width="6" opacity=".75"/><path d="M50 40 L34 88 H66Z" fill="#7f4f24" ${SW}/><path d="M50 40 Q50 66 62 88 H66Z" fill="#ffd8a8" ${SW}/><circle cx="44" cy="74" r="2" fill="#ffe066"/><circle cx="48" cy="80" r="1.5" fill="#ffe066"/><path d="M50 14 L90 88 H10Z" fill="none" ${SW}/><path d="M50 14 V3" ${SW}/><path d="M50 3 L64 7 L50 11Z" fill="#ff6b6b" ${SW}/>`,
+slide:()=>`${floorShadow(54,93,44,4)}<path d="M16 92 L26 24 M34 92 L42 24" fill="none" stroke="${O}" stroke-width="8" stroke-linecap="round"/><path d="M16 92 L26 24 M34 92 L42 24" fill="none" stroke="#4dabf7" stroke-width="4" stroke-linecap="round"/><path d="M20 76 H35 M22 60 H37 M24 44 H39" stroke="${O}" stroke-width="3.5" stroke-linecap="round"/>${shade(`<path d="M42 22 Q58 24 68 52 Q78 80 96 84 L94 94 Q70 92 60 62 Q52 38 40 32Z" fill="#ff6b6b" ${SW}/>`,'zSoft')}<path d="M46 26 Q60 30 66 54 Q74 80 94 88" fill="none" stroke="#fff" stroke-width="2.5" opacity=".6" stroke-linecap="round"/>${shade(`<rect x="20" y="18" width="28" height="9" rx="3" fill="#ffd43b" ${SW}/>`,'zBox')}<path d="M22 18 Q22 6 30 6 M46 18 Q46 6 38 6" fill="none" ${SW}/>`,
 balloonA:()=>`<path d="M50 70 Q46 84 54 96" fill="none" stroke="${O}" stroke-width="2"/><ellipse cx="50" cy="38" rx="26" ry="32" fill="#ff8fab" ${SW}/><path d="M46 70 L54 70 L50 64Z" fill="#ff8fab" ${SW}/>${HL(38,26,5,10)}`,
+wallclock:()=>`${shade(`<circle cx="50" cy="52" r="40" fill="#ff8fab" ${SW}/>`,'zSoft')}<circle cx="50" cy="52" r="31" fill="#fff" ${SW}/>${[0,90,180,270].map(a=>`<circle cx="${50+25*Math.sin(a*Math.PI/180)}" cy="${52-25*Math.cos(a*Math.PI/180)}" r="2.6" fill="${O}"/>`).join('')}<path d="M50 52 V32 M50 52 L63 58" ${SW} stroke-width="4.5"/><circle cx="50" cy="52" r="4" fill="#ffd43b" ${SW}/><path d="M30 18 L20 8 M70 18 L80 8" ${SW}/><circle cx="18" cy="8" r="6" fill="#ffd43b" ${SW}/><circle cx="82" cy="8" r="6" fill="#ffd43b" ${SW}/>`,
+stall:()=>`${floorShadow(50,94,40,4)}<path d="M18 40 V90 M82 40 V90" stroke="${O}" stroke-width="7"/><path d="M18 40 V90 M82 40 V90" stroke="#c08457" stroke-width="3"/>${shade(`<rect x="10" y="60" width="80" height="26" rx="5" fill="#e8b273" ${SW}/>`,'zBox')}<path d="M10 22 Q50 6 90 22 V40 H10Z" fill="#fff" ${SW}/>${[0,1,2,3,4].map(k=>k%2?'':`<path d="M${10+k*16} ${22-(k===2?6:k===0||k===4?0:4)} L${26+k*16} ${17-(k===1||k===3?0:2)} V40 H${10+k*16}Z" fill="#ff6b6b"/>`).join('')}<path d="M10 40 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0" fill="#ff6b6b" ${SW}/><circle cx="34" cy="56" r="7" fill="#ff5d73" ${SW}/><circle cx="50" cy="55" r="7" fill="#ffd43b" ${SW}/><circle cx="66" cy="56" r="7" fill="#8ce99a" ${SW}/>`,
+cake:()=>`${floorShadow(50,92,40,5)}${shade(`<path d="M12 50 V74 Q50 92 88 74 V50Z" fill="#ffd8a8" ${SW}/>`,'zSide')}<path d="M12 62 Q50 80 88 62" fill="none" stroke="#ff8fab" stroke-width="5"/>${shade(`<ellipse cx="50" cy="50" rx="38" ry="16" fill="#fff0f6" ${SW}/>`,'zSoft')}<path d="M14 54 q6 8 12 2 q6 10 12 2 q6 10 12 2 q6 10 12 2 q6 10 12 2 q6 8 12 -2" fill="#fff0f6" stroke="${O}" stroke-width="2"/>${[[34,46],[50,42],[66,46],[50,54]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5" fill="#ff5d73" ${SW}/><circle cx="${x-1.5}" cy="${y-1.5}" r="1.4" fill="#fff"/>`).join('')}<path d="M50 42 V22" ${SW}/><path d="M50 12 Q56 18 50 22 Q44 18 50 12Z" fill="#ffd43b" ${SW}/>`,
+coin1:()=>MONEY.coin(1,'#e9ecef','#adb5bd'),
+coin2:()=>MONEY.coin(2,'#ffe8a3','#e0b84c'),
+coin5:()=>MONEY.coin(5,'#e9ecef','#c08457'),
+coin10:()=>MONEY.coin(10,'#ffd43b','#ced4da',true),
+note20:()=>MONEY.note(20,'#8ce99a','#2f9e44'),
+note50:()=>MONEY.note(50,'#74c0fc','#1971c2'),
+note100:()=>MONEY.note(100,'#ff8787','#c92a2a'),
 clock:()=>`<rect x="28" y="30" width="44" height="64" rx="6" fill="#9c6b3c" ${SW}/><circle cx="50" cy="28" r="22" fill="#9c6b3c" ${SW}/><circle cx="50" cy="28" r="15" fill="#fff9db" ${SW}/><path d="M50 18 V28 L58 32" ${SW}/><path d="M50 52 V74" stroke="#ffd43b" stroke-width="3"/><circle cx="50" cy="78" r="6" fill="#ffd43b" ${SW}/>`,
 candle:()=>`<rect x="38" y="40" width="24" height="46" rx="4" fill="#fff4e0" ${SW}/><path d="M50 14 Q60 28 50 38 Q40 28 50 14Z" fill="#ffd43b" ${SW}/><ellipse cx="50" cy="90" rx="22" ry="6" fill="#adb5bd" ${SW}/>`,
 web:()=>`<g fill="none" stroke="#dee2e6" stroke-width="2"><path d="M0 0 L100 100 M0 0 L100 40 M0 0 L40 100 M0 0 L80 80"/><path d="M30 0 Q24 20 0 30 M60 0 Q48 44 0 60 M90 0 Q74 70 0 90"/></g>`,
@@ -925,6 +1068,7 @@ return `<svg class="art ${cls}" viewBox="0 0 100 100" width="${size}" height="${
 }
 const artRow=(name,n,size=22)=>Array.from({length:n},()=>art(name,size)).join('');
 const EMO2ART={'🪴':'plant','💡':'lamp','🧸':'teddy','🖼️':'picture','📚':'bookshelf','🪑':'chair','🛋️':'sofa','🛏️':'bed','📺':'tv','🎹':'piano','🐠':'aquarium','🕹️':'arcade','🏰':'castle','🚀':'rocket','🎈':'balloonA','👑':'crown',
+'⚽':'ball','🪁':'kite','🥁':'drum','🕰️':'clock','🌍':'globe','🎸':'guitar','🔬':'microscope','🔭':'telescope','🎠':'rockhorse','⛺':'tent','🛝':'slide',
 '🍄':'mushroom','🍅':'tomato','🫒':'olive','🌶️':'chili','🥕':'carrot','🌽':'corn','🎃':'pumpkin',
 '🪨':'rock','💎':'diamond','🔮':'crystal','🦴':'bone','🏺':'vase'};
 const emoArt=(e,size,cls='')=>EMO2ART[e]?art(EMO2ART[e],size,cls):e;
@@ -1174,6 +1318,7 @@ return { SEEDS, PLOT_PRICE, garden };
 })();
 __mods["js/art/pets.js"] = (() => {
 const { collection } = __mods["js/systems/collection.js"];
+const { shade, shadeOf, glossEye } = __mods["js/art/shade.js"];
 const PET={
 cat:{c:'#ffb347',d:'#e8892b',b:'#fff1dc',f:['ears:cat','tail:cat','muzzle','whisk']},
 frog:{c:'#7bd66b',d:'#4caf50',b:'#e9fbd9',f:['frogeyes','cheeks']},
@@ -1214,7 +1359,7 @@ const val=k=>{const x=[...F].find(x=>x.startsWith(k+':'));return x?x.split(':').
 const dark='#2b2d42';let back='',front='',face='',top='';
 const ear=val('ears');
 const ec=(ear&&ear.endsWith(':dark'))?dark:c, inner='#ffc9de';
-const E=(x)=>`<g class="ear">${x}</g>`;
+const E=(x)=>`<g class="ear">${shade(x,'zSoft')}</g>`;
 if(ear) switch(ear.split(':')[0]){
 case 'cat':back+=E(`<path d="M24 46 L28 20 L45 35 Z" fill="${c}"/><path d="M29 40 L31 27 L40 35 Z" fill="${inner}"/>`)+E(`<path d="M76 46 L72 20 L55 35 Z" fill="${c}"/><path d="M71 40 L69 27 L60 35 Z" fill="${inner}"/>`);break;
 case 'pointy':back+=E(`<path d="M24 44 L26 14 L46 34 Z" fill="${c}"/><path d="M29 38 L30 23 L40 33 Z" fill="${d}" opacity=".5"/>`)+E(`<path d="M76 44 L74 14 L54 34 Z" fill="${c}"/><path d="M71 38 L70 23 L60 33 Z" fill="${d}" opacity=".5"/>`);break;
@@ -1228,7 +1373,7 @@ case 'floppy':front+=E(`<ellipse cx="23" cy="54" rx="8" ry="16" fill="${d}" tran
 }
 if(has('tufts')) back+=`<path d="M28 42 L26 24 L40 36 Z" fill="${d}"/><path d="M72 42 L74 24 L60 36 Z" fill="${d}"/>`;
 const tail=val('tail');
-const T=x=>`<g class="tail">${x}</g>`;
+const T=x=>`<g class="tail">${shade(x,'zSoft')}</g>`;
 if(tail) switch(tail){
 case 'cat':back+=T(`<path d="M76 78 Q96 74 92 52 Q90 46 86 50 Q88 68 74 72 Z" fill="${d}"/>`);break;
 case 'curl':back+=T(`<path d="M78 72 q10 -2 8 -9 q-2 -5 -6 -1 q-1 4 3 3" fill="none" stroke="${d}" stroke-width="3" stroke-linecap="round"/>`);break;
@@ -1243,57 +1388,59 @@ case 'whale':back+=T(`<path d="M78 70 Q90 64 92 54 L100 50 L96 60 L102 66 L92 64
 case 'lion':back+=T(`<path d="M76 80 Q96 82 94 64" fill="none" stroke="${d}" stroke-width="3"/><circle cx="94" cy="62" r="5" fill="${d}"/>`);break;
 }
 const wing=val('wings');
-if(wing==='small') front+=`<g class="wingL"><ellipse cx="22" cy="68" rx="7" ry="12" fill="${d}" transform="rotate(25 22 68)"/></g><g class="wingR"><ellipse cx="78" cy="68" rx="7" ry="12" fill="${d}" transform="rotate(-25 78 68)"/></g>`;
-if(wing==='dragon') back+=`<g class="wingL"><path d="M28 56 Q4 30 2 52 Q10 50 10 60 Q16 56 20 66 Z" fill="${d}"/></g><g class="wingR"><path d="M72 56 Q96 30 98 52 Q90 50 90 60 Q84 56 80 66 Z" fill="${d}"/></g>`;
+if(wing==='small') front+=`<g class="wingL">${shade(`<ellipse cx="22" cy="68" rx="7" ry="12" fill="${d}" transform="rotate(25 22 68)"/>`,'zSoft')}</g><g class="wingR">${shade(`<ellipse cx="78" cy="68" rx="7" ry="12" fill="${d}" transform="rotate(-25 78 68)"/>`,'zSoft')}</g>`;
+if(wing==='dragon') back+=`<g class="wingL">${shade(`<path d="M28 56 Q4 30 2 52 Q10 50 10 60 Q16 56 20 66 Z" fill="${d}"/>`,'zSoft')}</g><g class="wingR">${shade(`<path d="M72 56 Q96 30 98 52 Q90 50 90 60 Q84 56 80 66 Z" fill="${d}"/>`,'zSoft')}</g>`;
 if(has('fan')) back+=`<g class="tail">${[-60,-35,-12,12,35,60].map(a=>`<g transform="rotate(${a} 50 70)"><ellipse cx="50" cy="28" rx="9" ry="24" fill="${d}"/><circle cx="50" cy="14" r="5" fill="#4263eb"/><circle cx="50" cy="14" r="2.5" fill="#ffd43b"/></g>`).join('')}</g>`;
 if(has('mane')){
 if(val('mane')==='rainbow') top+=`<path d="M38 34 Q30 40 30 56" fill="none" stroke="#ff8787" stroke-width="5" stroke-linecap="round"/><path d="M44 32 Q36 40 36 50" fill="none" stroke="#ffd43b" stroke-width="5" stroke-linecap="round"/><path d="M50 32 Q44 38 44 44" fill="none" stroke="#74c0fc" stroke-width="5" stroke-linecap="round"/>`;
 else back+=`<circle cx="50" cy="58" r="40" fill="${d}"/>${Array.from({length:14},(_,k)=>{const a=k/14*Math.PI*2;return `<circle cx="${50+38*Math.cos(a)}" cy="${58+36*Math.sin(a)}" r="9" fill="${d}"/>`;}).join('')}`;
 }
-if(has('shell')&&val('shell')==='snail') back+=`<circle cx="66" cy="54" r="22" fill="${d}"/><path d="M66 54 m0 -14 a14 14 0 1 1 -13 9 a9 9 0 1 1 9 -4 a4 4 0 1 1 -3 -1" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>`;
+if(has('shell')&&val('shell')==='snail') back+=`<circle cx="66" cy="54" r="22" fill="${d}"/><circle cx="66" cy="54" r="22" fill="url(#zSph)"/><path d="M66 54 m0 -14 a14 14 0 1 1 -13 9 a9 9 0 1 1 9 -4 a4 4 0 1 1 -3 -1" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>`;
 if(has('tentacles')) front+=[22,36,50,64,78].map((x,k)=>`<g class="tent" style="animation-delay:-${k*0.15}s"><path d="M${x} 82 q-4 8 0 12 q4 3 6 -1" fill="none" stroke="${c}" stroke-width="7" stroke-linecap="round"/></g>`).join('');
-if(has('feet')) front+=`<ellipse cx="38" cy="91" rx="8" ry="4" fill="${P.f.includes('shell:turtle')?c:'#ff922b'}"/><ellipse cx="62" cy="91" rx="8" ry="4" fill="${P.f.includes('shell:turtle')?c:'#ff922b'}"/>`;
+if(has('feet')){const fc=P.f.includes('shell:turtle')?c:'#ff922b';front+=[38,62].map(x=>shade(`<ellipse cx="${x}" cy="91" rx="8" ry="4" fill="${fc}"/>`,'zSoft')).join('');}
 let body;
 if(has('robot')) body=`<rect x="22" y="34" width="56" height="56" rx="16" fill="${c}"/><rect x="30" y="44" width="40" height="26" rx="9" fill="#343a40"/><rect x="36" y="76" width="28" height="8" rx="4" fill="${d}"/>`;
 else body=`<ellipse cx="50" cy="63" rx="30" ry="29" fill="${c}"${c==='#ffffff'?' stroke="#e9ecef" stroke-width="1.5"':''}/>`+
 (has('belly')&&val('belly')==='big'?`<ellipse cx="50" cy="70" rx="22" ry="21" fill="${b}"/>`:`<ellipse cx="50" cy="75" rx="17" ry="13" fill="${b}"/>`);
-if(has('shell')&&val('shell')==='turtle') body+=`<path d="M21 62 Q50 18 79 62 Z" fill="${d}"/><path d="M36 58 L42 44 L58 44 L64 58 Z" fill="none" stroke="#c0eb75" stroke-width="2"/>`;
+body+=shadeOf(has('robot')?`<rect x="22" y="34" width="56" height="56" rx="16" fill="${c}"/>`:`<ellipse cx="50" cy="63" rx="30" ry="29" fill="${c}"/>`);
+if(has('shell')&&val('shell')==='turtle') body+=`${shade(`<path d="M21 62 Q50 18 79 62 Z" fill="${d}"/>`,'zSoft')}<path d="M36 58 L42 44 L58 44 L64 58 Z" fill="none" stroke="#c0eb75" stroke-width="2"/>`;
 if(has('belly')&&val('belly')==='stripes') body+=[70,76,82].map(y=>`<path d="M36 ${y} Q50 ${y+3} 64 ${y}" stroke="${d}" stroke-width="1.5" fill="none" opacity=".5"/>`).join('');
 if(has('head')) body+=`<ellipse cx="50" cy="50" rx="26" ry="16" fill="${b}"/>`;
 if(has('stripes')) body+=`<path d="M44 37 l2 7 M50 35 v8 M56 37 l-2 7 M21 60 h7 M21 67 h6 M79 60 h-7 M79 67 h-6" stroke="${d}" stroke-width="2.5" stroke-linecap="round"/>`;
 if(has('spots')) body+=`<circle cx="32" cy="52" r="3" fill="${d}" opacity=".5"/><circle cx="70" cy="48" r="2.5" fill="${d}" opacity=".5"/><circle cx="66" cy="80" r="3" fill="${d}" opacity=".5"/>`;
 if(has('spot')) body+=`<ellipse cx="64" cy="48" rx="7" ry="6" fill="${d}" opacity=".6"/>`;
 if(has('stars')) body+=[[32,48],[64,44],[70,70],[36,78],[56,86],[46,40]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1.6" fill="#fff"><animate attributeName="opacity" values="1;.2;1" dur="${1.5+x%3*0.4}s" repeatCount="indefinite"/></circle>`).join('');
-if(has('arms')) body+=`<ellipse cx="25" cy="72" rx="7" ry="10" fill="${dark}"/><ellipse cx="75" cy="72" rx="7" ry="10" fill="${dark}"/>`;
+if(has('arms')) body+=[25,75].map(x=>shade(`<ellipse cx="${x}" cy="72" rx="7" ry="10" fill="${dark}"/>`,'zSoft')).join('');
 if(has('face')) body+=`<path d="M30 60 Q30 44 42 46 Q50 42 58 46 Q70 44 70 60 Q70 76 50 76 Q30 76 30 60Z" fill="${b}"/>`;
-if(has('horn')) top+=`<path d="M50 12 L44 36 L56 36 Z" fill="#ffd43b"/><path d="M46.5 28 L53.5 26 M45.5 32 L54.5 30" stroke="#fab005" stroke-width="1.5"/>`;
+if(has('horn')) top+=`${shade('<path d="M50 12 L44 36 L56 36 Z" fill="#ffd43b"/>','zSide')}<path d="M46.5 28 L53.5 26 M45.5 32 L54.5 30" stroke="#fab005" stroke-width="1.5"/>`;
 if(has('horns')) top+=`<path d="M36 38 Q30 24 36 18 Q38 28 44 36 Z" fill="#fff3bf"/><path d="M64 38 Q70 24 64 18 Q62 28 56 36 Z" fill="#fff3bf"/>`;
 if(has('tuft')) top+=`<path d="M50 35 Q46 24 52 22 Q50 28 56 26 Q54 32 50 35" fill="${d}"/>`;
 if(has('crest')) top+=[44,50,56].map(x=>`<line x1="50" y1="36" x2="${x}" y2="20" stroke="${d}" stroke-width="2"/><circle cx="${x}" cy="19" r="3" fill="#4263eb"/>`).join('');
 if(has('antenna')) top+=`<line x1="50" y1="34" x2="50" y2="20" stroke="#868e96" stroke-width="3"/><circle cx="50" cy="18" r="5" fill="#ff6b6b"><animate attributeName="fill" values="#ff6b6b;#ffe066;#ff6b6b" dur="1.2s" repeatCount="indefinite"/></circle>`;
 if(has('antenna2')) top+=`<path d="M42 38 Q38 26 34 22" stroke="${c}" stroke-width="3" fill="none"/><circle cx="34" cy="21" r="3.5" fill="${d}"/><path d="M50 36 Q52 24 56 20" stroke="${c}" stroke-width="3" fill="none"/><circle cx="56" cy="19" r="3.5" fill="${d}"/>`;
-if(has('spikes')) top+=`<path d="M34 40 l5 -10 l5 8 l6 -11 l6 11 l5 -8 l5 10 Z" fill="${d}"/>`;
-if(has('fin')) top+=`<path d="M44 36 Q54 12 62 36 Z" fill="${d}"/>`;
+if(has('spikes')) top+=shade(`<path d="M34 40 l5 -10 l5 8 l6 -11 l6 11 l5 -8 l5 10 Z" fill="${d}"/>`,'zSoft');
+if(has('fin')) top+=shade(`<path d="M44 36 Q54 12 62 36 Z" fill="${d}"/>`,'zSoft');
 if(has('spout')) top+=`<g class="tail"><path d="M50 34 q-2 -10 -8 -14 M50 34 q0 -12 0 -16 M50 34 q2 -10 8 -14" stroke="#74c0fc" stroke-width="3" fill="none" stroke-linecap="round"/></g>`;
 if(has('sparkle')) top+=`<text x="14" y="30" font-size="12">✨</text><text x="78" y="34" font-size="10">✨</text>`;
 let ex=[40,60],ey=58;
-if(has('frogeyes')){top+=`<circle cx="37" cy="40" r="11" fill="${c}"/><circle cx="63" cy="40" r="11" fill="${c}"/><circle cx="37" cy="40" r="7" fill="#fff"/><circle cx="63" cy="40" r="7" fill="#fff"/>`;ex=[37,63];ey=40;}
+if(has('frogeyes')){top+=`${shade(`<circle cx="37" cy="40" r="11" fill="${c}"/>`)}${shade(`<circle cx="63" cy="40" r="11" fill="${c}"/>`)}<circle cx="37" cy="40" r="7" fill="#fff"/><circle cx="63" cy="40" r="7" fill="#fff"/>`;ex=[37,63];ey=40;}
 if(has('patches')) face+=`<ellipse cx="39" cy="58" rx="8" ry="9" fill="${dark}" transform="rotate(-20 39 58)"/><ellipse cx="61" cy="58" rx="8" ry="9" fill="${dark}" transform="rotate(20 61 58)"/>`;
 if(has('eyering')) face+=`<circle cx="39" cy="56" r="10" fill="#fff"/><circle cx="61" cy="56" r="10" fill="#fff"/>`;
 const eyeC=has('patches')?'#fff':dark,hl=has('patches')?dark:'#fff';
 if(has('robot')) face+=ex.map(x=>`<g class="eye"><rect x="${x-5}" y="${ey-6}" width="10" height="10" rx="3" fill="#69db7c"/></g>`).join('');
-else face+=ex.map(x=>`<g class="eye"><ellipse cx="${x}" cy="${ey}" rx="4.6" ry="5.4" fill="${eyeC}"/><circle cx="${x+1.6}" cy="${ey-2}" r="1.8" fill="${hl}"/></g>`).join('');
+else face+=ex.map(x=>`<g class="eye">${glossEye(x,ey,4.6,5.4,eyeC,hl)}</g>`).join('');
 if(!has('robot')){
 const ck=val('cheeks')==='big'?7:4.5;
 face+=`<ellipse cx="31" cy="67" rx="${ck+1}" ry="${ck*0.65}" fill="#ff8fab" opacity=".55"/><ellipse cx="69" cy="67" rx="${ck+1}" ry="${ck*0.65}" fill="#ff8fab" opacity=".55"/>`;
 }
 const mz=val('muzzle');
-if(has('muzzle')) face+=`<ellipse cx="50" cy="67" rx="10" ry="7" fill="${mz==='white'?'#fff':b}"/><ellipse cx="50" cy="64" rx="3.2" ry="2.4" fill="${dark}"/>`;
-if(has('snout')) face+=`<ellipse cx="50" cy="67" rx="8" ry="6" fill="${d}"/><ellipse cx="47" cy="67" rx="1.6" ry="2.2" fill="#c2255c"/><ellipse cx="53" cy="67" rx="1.6" ry="2.2" fill="#c2255c"/>`;
+if(has('muzzle')) face+=`${shade(`<ellipse cx="50" cy="67" rx="10" ry="7" fill="${mz==='white'?'#fff':b}"/>`,'zSoft')}<ellipse cx="50" cy="64" rx="3.2" ry="2.4" fill="${dark}"/><circle cx="49" cy="63.2" r=".9" fill="#fff" opacity=".75"/>`;
+if(has('snout')) face+=`${shade(`<ellipse cx="50" cy="67" rx="8" ry="6" fill="${d}"/>`)}<ellipse cx="47" cy="67" rx="1.6" ry="2.2" fill="#c2255c"/><ellipse cx="53" cy="67" rx="1.6" ry="2.2" fill="#c2255c"/>`;
 const nz=val('nose');
-if(nz) face+=nz==='big'?`<ellipse cx="50" cy="66" rx="6" ry="7.5" fill="#495057"/>`:`<ellipse cx="50" cy="65" rx="${nz==='dark'?3.5:2.6}" ry="${nz==='dark'?2.6:2}" fill="${nz==='pink'?'#ff8fab':dark}"/>`;
+if(nz) face+=(nz==='big'?`<ellipse cx="50" cy="66" rx="6" ry="7.5" fill="#495057"/>`:`<ellipse cx="50" cy="65" rx="${nz==='dark'?3.5:2.6}" ry="${nz==='dark'?2.6:2}" fill="${nz==='pink'?'#ff8fab':dark}"/>`)
++`<circle cx="${nz==='big'?48:49}" cy="${nz==='big'?62:64.2}" r="${nz==='big'?1.8:0.8}" fill="#fff" opacity=".75"/>`;
 const bk=val('beak');
-if(has('beak')) face+=bk==='duck'?`<ellipse cx="50" cy="67" rx="9" ry="4.5" fill="#ff922b"/>`:bk==='hook'?`<path d="M44 63 Q50 58 56 63 Q54 72 50 74 Q50 68 44 63Z" fill="#fcc419"/>`:`<path d="M45 64 L55 64 L50 71 Z" fill="#ff922b"/>`;
+if(has('beak')) face+=shade(bk==='duck'?`<ellipse cx="50" cy="67" rx="9" ry="4.5" fill="#ff922b"/>`:bk==='hook'?`<path d="M44 63 Q50 58 56 63 Q54 72 50 74 Q50 68 44 63Z" fill="#fcc419"/>`:`<path d="M45 64 L55 64 L50 71 Z" fill="#ff922b"/>`,'zSoft');
 if(has('trunk')) face+=`<g class="tail"><path d="M50 64 Q50 84 60 86 Q64 86 63 82" fill="none" stroke="${c}" stroke-width="8" stroke-linecap="round"/></g>`;
 if(has('whisk')) face+=`<path d="M26 64 h-8 M26 68 l-7 2 M74 64 h8 M74 68 l7 2" stroke="${dark}" stroke-width="1" opacity=".5"/>`;
 const mouthNeeded=!has('beak')&&!has('trunk')&&!has('snout');
@@ -1307,7 +1454,7 @@ aura=`<defs><radialGradient id="aur"><stop offset=".55" stop-color="#fff3bf" sto
 fw=`<g class="wingL"><path d="M28 58 Q0 26 4 56 Q0 76 26 70Z" fill="#c5f6fa" opacity=".85" stroke="#66d9e8" stroke-width="1.5"/></g><g class="wingR"><path d="M72 58 Q100 26 96 56 Q100 76 74 70Z" fill="#c5f6fa" opacity=".85" stroke="#66d9e8" stroke-width="1.5"/></g>`;
 crown=`<path d="M38 31 L35 17 L44 24 L50 12 L56 24 L65 17 L62 31Z" fill="#ffd43b" stroke="#e67700" stroke-width="1.6" stroke-linejoin="round"/><circle cx="50" cy="24" r="2.4" fill="#ff6b6b"/>`;
 }
-return `<svg viewBox="0 0 100 100">${aura}<ellipse class="shd" cx="50" cy="94" rx="27" ry="4" fill="#00000022"/><g class="bd">${fw}${back}${body}${top}${face}${front}${badge}${crown}</g></svg>`;
+return `<svg viewBox="0 0 100 100">${aura}<ellipse class="shd" cx="50" cy="94" rx="30" ry="5" fill="url(#zShd)"/><g class="bd">${fw}${back}${body}${top}${face}${front}${badge}${crown}</g></svg>`;
 }
 class PetArt {
 #cache = new Map();
@@ -1785,6 +1932,7 @@ this._listeners = [];
 }
 get W() { return this.stage.clientWidth; }
 get H() { return this.stage.clientHeight; }
+get uiScale() { return Math.max(1, Math.min(1.7, Math.min(this.W, this.H) / 560)); }
 showProgress(text = `⭐ ${this.i}/${this.n}`) { ui.setProgress(text); }
 askQuestion(q, prefix = '', hint = '') {
 ui.setQuestion(`<div>${prefix}${diff.text(q)} = <span class="qm">?</span></div>${diff.appleHint(q)}<div class="hint" id="mh">${hint}</div>`);
@@ -3134,10 +3282,13 @@ const { petArt } = __mods["js/art/pets.js"];
 const { collection } = __mods["js/systems/collection.js"];
 const { garden, SEEDS } = __mods["js/systems/garden.js"];
 const { RBONUS } = __mods["js/data/monsters.js"];
-const FURNITURE = [['🪴', 'ต้นไม้', 50], ['💡', 'โคมไฟ', 80], ['🧸', 'ตุ๊กตาหมี', 100], ['🖼️', 'รูปภาพ', 120], ['📚', 'ชั้นหนังสือ', 150],
-['🪑', 'เก้าอี้', 180], ['🛋️', 'โซฟา', 250], ['🛏️', 'เตียง', 300], ['📺', 'ทีวี', 350], ['🎹', 'เปียโน', 500], ['🐠', 'ตู้ปลา', 600],
-['🕹️', 'ตู้เกม', 700], ['🏰', 'ปราสาทจำลอง', 900], ['🚀', 'จรวดจำลอง', 999]];
-const SCALE = { '🛏️': 1.6, '🛋️': 1.5, '🎹': 1.5, '🏰': 1.4, '🐠': 1.3, '🕹️': 1.4, '📚': 1.4, '📺': 1.2, '🚀': 1.4, '🪑': 1.1, '💡': 1.2 };
+const FURNITURE = [['🪴', 'ต้นไม้', 50], ['⚽', 'ลูกบอล', 60], ['💡', 'โคมไฟ', 80], ['🪁', 'ว่าว', 90], ['🧸', 'ตุ๊กตาหมี', 100], ['🖼️', 'รูปภาพ', 120],
+['📚', 'ชั้นหนังสือ', 150], ['🥁', 'กลอง', 160], ['🪑', 'เก้าอี้', 180], ['🕰️', 'นาฬิกาตั้งพื้น', 200], ['🌍', 'ลูกโลก', 220], ['🛋️', 'โซฟา', 250],
+['🎸', 'กีตาร์', 260], ['🛏️', 'เตียง', 300], ['📺', 'ทีวี', 350], ['🔬', 'กล้องจุลทรรศน์', 380], ['🔭', 'กล้องดูดาว', 450], ['🎹', 'เปียโน', 500],
+['🎠', 'ม้าโยก', 550], ['🐠', 'ตู้ปลา', 600], ['⛺', 'เต็นท์', 650], ['🕹️', 'ตู้เกม', 700], ['🛝', 'สไลเดอร์', 800],
+['🏰', 'ปราสาทจำลอง', 900], ['🚀', 'จรวดจำลอง', 999]];
+const SCALE = { '🛏️': 1.6, '🛋️': 1.5, '🎹': 1.5, '🏰': 1.4, '🐠': 1.3, '🕹️': 1.4, '📚': 1.4, '📺': 1.2, '🚀': 1.4, '🪑': 1.1, '💡': 1.2,
+'🕰️': 1.3, '🌍': 1.1, '🎸': 1.2, '🔬': 1.1, '🔭': 1.3, '🎠': 1.4, '⛺': 1.6, '🛝': 1.6 };
 const THEMES = {
 basic: { name: 'ห้องธรรมดา', price: 0, wall: '#ffe8cc', floor: '#d9a066' },
 candy: { name: 'ห้องขนมหวาน', price: 200, wall: '#ffd6e7', floor: '#f7a8c4' },
@@ -3439,6 +3590,629 @@ lb.appendChild(row);
 }
 return { Leaderboard };
 })();
+__mods["js/games/ClockGame.js"] = (() => {
+const { BaseGame, HELP_REMOVED } = __mods["js/games/BaseGame.js"];
+const { diff } = __mods["js/core/difficulty.js"];
+const { ui } = __mods["js/core/ui.js"];
+const { sound } = __mods["js/core/sound.js"];
+const { el, rnd, pick, shuffle, shake } = __mods["js/core/utils.js"];
+const { petArt } = __mods["js/art/pets.js"];
+const { collection } = __mods["js/systems/collection.js"];
+const { MONS } = __mods["js/data/monsters.js"];
+const ROUTINE = [
+['ตื่นนอน', 6, 8], ['ไปโรงเรียน', 7, 8], ['กินข้าวเที่ยง', 11, 13], ['เล่นฟุตบอล', 15, 17], ['ทำการบ้าน', 16, 18],
+['อาบน้ำ', 17, 19], ['กินข้าวเย็น', 18, 19], ['ดูการ์ตูน', 9, 10], ['รดน้ำต้นไม้', 7, 9], ['ปลูกผัก', 8, 10],
+['กินขนม', 14, 15], ['อ่านนิทาน', 19, 20], ['เข้านอน', 20, 21],
+];
+function thaiTime(h, m) {
+let w;
+if (h === 0) w = 'เที่ยงคืน';
+else if (h < 6) w = `ตี ${h}`;
+else if (h < 12) w = `${h} โมง${m ? '' : 'เช้า'}`;
+else if (h === 12) w = 'เที่ยง';
+else if (h === 13) w = 'บ่ายโมง';
+else if (h < 16) w = `บ่าย ${h - 12} โมง`;
+else if (h < 19) w = `${h - 12} โมง${m ? '' : 'เย็น'}`;
+else w = `${h - 18} ทุ่ม`;
+return w + (m === 0 ? (h === 12 ? 'ตรง' : '') : m === 30 ? 'ครึ่ง' : ` ${m} นาที`);
+}
+const digital = (h, m) => `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')} น.`;
+const RAD = Math.PI / 180;
+function pickFriend(exclude = []) {
+const skip = new Set([collection.buddyId, ...exclude]);
+const owned = collection.owned().filter((m) => !skip.has(m.id));
+return owned.length ? pick(owned) : pick(MONS.filter((m) => m.r === 'common' && !skip.has(m.id)));
+}
+class ClockGame extends BaseGame {
+start() {
+this.n = 6;
+this.step = diff.by(60, 30, 5);  // minute steps the questions use
+this.snap = diff.by(60, 15, 5);  // minute hand snaps to this many minutes
+this.mon = pickFriend();
+this.next();
+}
+next() {
+this.stage.innerHTML = '';
+if (this.i >= this.n) return this.finish();
+this.showProgress();
+this.locked = false;
+const [what, h0, h1] = pick(ROUTINE);
+let h, m;
+do { h = rnd(h0, h1); m = rnd(0, 59 / this.step | 0) * this.step % 60; } while (this.q && this.q.h === h && this.q.m === m);
+this.q = { h, m, what, read: this.i % 2 === 1 }; // even rounds: set the clock; odd rounds: read it
+this.build();
+}
+build() {
+const q = this.q;
+const say = q.read ? `ฉัน${q.what}ตอนกี่โมงนะ? 🤔` : `ช่วยตั้งนาฬิกาให้หน่อย ฉันจะ${q.what}ตอน <b>${thaiTime(q.h, q.m)}</b>`;
+ui.setQuestion(q.read
+? `<div>🕐 นาฬิกาบอกเวลาอะไร?</div><div class="hint" id="mh">เข็มสั้นบอกชั่วโมง · เข็มยาวบอกนาที</div>`
+: `<div>🕐 ตั้งนาฬิกาเป็น ${thaiTime(q.h, q.m)}</div><div class="hint" id="mh">${diff.mult ? '' : digital(q.h, q.m) + ' · '}${diff.easy ? 'ลากเข็มสั้นไปชี้ที่เลขชั่วโมง' : 'ลากเข็มสั้น (ชั่วโมง) และเข็มยาว (นาที)'}</div>`);
+this.wrap = el('div', 'clockgame');
+this.side = el('div', 'clockside', `<div class="bsay2">${say}</div>${petArt.html(this.mon, 110)}`);
+this.face = el('div', 'clockface');
+this.wrap.append(this.face, this.side);
+this.stage.appendChild(this.wrap);
+if (q.read) { this.hand = { h: q.h % 12 || 12, m: q.m }; this.buildOptions(); }
+else {
+let h0;
+do h0 = ((q.h % 12) + rnd(3, 8)) % 12 || 12; while (diff.easy && h0 === 12);
+this.hand = { h: h0, m: diff.easy ? 0 : (q.m + 30) % 60 };
+const btn = el('button', 'checkBtn clockok', '✅ ตั้งเสร็จแล้ว');
+btn.onclick = () => this.check();
+this.side.appendChild(btn);
+}
+this.drawFace();
+this.resize();
+}
+resize() {
+if (!this.wrap) return;
+const portrait = this.H > this.W * 1.05;
+this.wrap.classList.toggle('portrait', portrait);
+const s = portrait ? Math.min(this.W * 0.86, this.H * 0.5) : Math.min(this.H * 0.86, this.W * 0.5);
+this.face.style.setProperty('--cs', Math.max(200, s) + 'px');
+}
+drawFace() {
+const nums = Array.from({ length: 12 }, (_, k) => {
+const n = k + 1, a = n * 30 * RAD;
+return `<text class="cnum" data-n="${n}" x="${100 + 72 * Math.sin(a)}" y="${100 - 72 * Math.cos(a) + 9}" text-anchor="middle">${n}</text>`;
+}).join('');
+const ticks = Array.from({ length: 60 }, (_, k) => {
+const a = k * 6 * RAD, r0 = k % 5 ? 86 : 82;
+return `<line x1="${100 + r0 * Math.sin(a)}" y1="${100 - r0 * Math.cos(a)}" x2="${100 + 90 * Math.sin(a)}" y2="${100 - 90 * Math.cos(a)}" stroke="#4a3b5c" stroke-width="${k % 5 ? 1 : 2.5}" stroke-linecap="round"/>`;
+}).join('');
+this.face.innerHTML = `<svg viewBox="0 0 200 200">
+<circle cx="100" cy="102" r="98" fill="#3a255022"/>
+<circle cx="100" cy="100" r="97" fill="#ff8fab" stroke="#4a3b5c" stroke-width="3"/><circle cx="100" cy="100" r="97" fill="url(#zSph)"/>
+<circle cx="100" cy="100" r="92" fill="#fffdf7" stroke="#4a3b5c" stroke-width="2.5"/>${ticks}${nums}
+<g class="hand hh" data-hand="h"><line x1="100" y1="100" x2="100" y2="48" stroke="#4a3b5c" stroke-width="13" stroke-linecap="round"/><line x1="100" y1="100" x2="100" y2="48" stroke="#4dabf7" stroke-width="7" stroke-linecap="round"/><line x1="100" y1="112" x2="100" y2="40" stroke="transparent" stroke-width="30"/></g>
+<g class="hand mh" data-hand="m"><line x1="100" y1="100" x2="100" y2="24" stroke="#4a3b5c" stroke-width="9" stroke-linecap="round"/><line x1="100" y1="100" x2="100" y2="24" stroke="#ff6b6b" stroke-width="4" stroke-linecap="round"/><line x1="100" y1="112" x2="100" y2="18" stroke="transparent" stroke-width="26"/></g>
+<circle cx="100" cy="100" r="7" fill="#ffd43b" stroke="#4a3b5c" stroke-width="2.5"/></svg>`;
+this.svg = this.face.querySelector('svg');
+this.hh = this.face.querySelector('.hh');
+this.mh = this.face.querySelector('.mh');
+this.hAngle = null; this.mAngle = null;
+this.paint();
+if (!this.q.read) this.svg.onpointerdown = (e) => this.grab(e);
+else this.svg.style.cursor = 'default';
+}
+paint() {
+const { h, m } = this.hand;
+const ha = this.hAngle ?? ((h % 12) * 30 + m * 0.5), ma = this.mAngle ?? m * 6;
+this.hh.setAttribute('transform', `rotate(${ha} 100 100)`);
+this.mh.setAttribute('transform', `rotate(${ma} 100 100)`);
+}
+polar(ev) {
+const r = this.svg.getBoundingClientRect();
+const x = ev.clientX - r.left - r.width / 2, y = ev.clientY - r.top - r.height / 2;
+return { a: (Math.atan2(x, -y) / RAD + 360) % 360, d: Math.hypot(x, y) / (r.width / 2) };
+}
+grab(e) {
+if (this.locked) return;
+e.preventDefault();
+const p = this.polar(e);
+let which = p.d < 0.6 ? 'h' : 'm';
+if (diff.easy) which = 'h'; // minute hand stays on 12 at the easy level
+this.dragging = which;
+(which === 'h' ? this.hh : this.mh).classList.add('active');
+try { this.svg.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+const move = (ev) => this.turn(ev);
+const up = () => {
+this.svg.removeEventListener('pointermove', move);
+this.svg.removeEventListener('pointerup', up);
+this.svg.removeEventListener('pointercancel', up);
+this.release();
+};
+this.svg.addEventListener('pointermove', move);
+this.svg.addEventListener('pointerup', up);
+this.svg.addEventListener('pointercancel', up);
+this.turn(e);
+}
+turn(ev) {
+const { a } = this.polar(ev);
+if (this.dragging === 'h') this.hAngle = a;
+else {
+const m = Math.round(a / 6) % 60;
+if (m !== this.hand.m) sound.beep([1200], 0.015);
+this.hand.m = m; this.mAngle = a;
+}
+this.paint();
+}
+release() {
+if (this.dragging === 'h') {
+const raw = Math.round((this.hAngle - this.hand.m * 0.5) / 30);
+this.hand.h = ((raw % 12) + 12) % 12 || 12;
+} else {
+this.hand.m = (Math.round(this.mAngle / 6 / this.snap) * this.snap) % 60;
+}
+this.hh.classList.remove('active'); this.mh.classList.remove('active');
+this.dragging = null; this.hAngle = null; this.mAngle = null;
+sound.pop();
+this.paint();
+}
+multHint() {}
+check() {
+if (this.locked) return;
+const q = this.q, hOk = this.hand.h === (q.h % 12 || 12), mOk = this.hand.m === q.m;
+if (hOk && mOk) return this.win();
+shake(this.face);
+this.miss(!mOk && !hOk ? 'ลองดูทั้งสองเข็มอีกทีนะ 🙂' : !hOk ? `เข็มสั้นยังไม่ตรงนะ ต้องชี้ใกล้เลข ${q.h % 12 || 12}` : `เข็มยาวยังไม่ตรงนะ ${q.m === 0 ? 'ต้องชี้ที่เลข 12' : q.m === 30 ? 'ครึ่งชั่วโมงต้องชี้ที่เลข 6' : `นับทีละ 5 ไปจนถึง ${q.m}`}`);
+if (diff.mult) ui.hint(digital(q.h, q.m));
+}
+buildOptions() {
+const q = this.q, right = thaiTime(q.h, q.m), opts = new Set([right]);
+const near = shuffle([
+[q.h + 1, q.m], [q.h - 1, q.m], [q.h, (q.m + 30) % 60], [q.h, (q.m + this.step) % 60],
+...(diff.mult ? [[(q.m / 5 + 12) % 24 || 12, (q.h % 12) * 5]] : []), // hands mixed up: a classic mistake
+]);
+for (const [h, m] of near) { if (opts.size >= 3) break; if (h >= 6 && h <= 21) opts.add(thaiTime(h, m)); }
+while (opts.size < 3) opts.add(thaiTime(rnd(6, 21), q.m));
+this.opts = shuffle([...opts]).map((t) => ({ t, v: t === right ? 'ok' : t }));
+this.q.ans = 'ok';
+const row = el('div', 'clockopts');
+for (const o of this.opts) {
+o.el = el('button', 'ans');
+o.el.textContent = o.t;
+o.el.onclick = () => {
+if (this.locked || o.dead) return;
+if (o.v === 'ok') { o.el.classList.add('right'); this.win(); }
+else { shake(o.el); o.dead = true; o.el.disabled = true; o.el.style.opacity = 0.4; this.miss(); }
+};
+row.appendChild(o.el);
+}
+this.side.appendChild(row);
+}
+win() {
+this.locked = true; this.i++;
+const q = this.q;
+this.praise(`${pick(['เก่งมาก!', 'ถูกต้อง!', 'สุดยอด!'])} ${thaiTime(q.h, q.m)} ${q.what} 🎉`);
+this.showProgress();
+this.face.querySelector(`.cnum[data-n="${q.h % 12 || 12}"]`)?.classList.add('glow');
+this.side.querySelector('.pet')?.classList.add('happy');
+this.later(() => this.next(), 1600);
+}
+buddyHelp() {
+const q = this.q;
+if (q.read) {
+const o = this.pickWrong(this.opts, (x) => !x.dead);
+if (!o) return null;
+o.dead = true; o.el.disabled = true; o.el.style.opacity = 0.15;
+return HELP_REMOVED;
+}
+const n = q.h % 12 || 12;
+this.face.querySelector(`.cnum[data-n="${n}"]`)?.classList.add('glow');
+return `เข็มสั้นชี้ที่เลข ${n}${q.m === 30 ? ' (เลยไปครึ่งทาง)' : ''} · เข็มยาว${q.m === 0 ? 'ชี้ที่เลข 12' : q.m === 30 ? 'ชี้ที่เลข 6' : `ชี้ที่เลข ${q.m / 5}`} นะ 🐾`;
+}
+}
+return { thaiTime, pickFriend, ClockGame };
+})();
+__mods["js/games/MarketGame.js"] = (() => {
+const { BaseGame, HELP_REMOVED } = __mods["js/games/BaseGame.js"];
+const { diff } = __mods["js/core/difficulty.js"];
+const { ui } = __mods["js/core/ui.js"];
+const { sound } = __mods["js/core/sound.js"];
+const { el, rnd, pick, shake, dragPointer, inRect, sum } = __mods["js/core/utils.js"];
+const { art } = __mods["js/art/art.js"];
+const { petArt } = __mods["js/art/pets.js"];
+const { pickFriend } = __mods["js/games/ClockGame.js"];
+const GOODS = [['cookie', 'คุกกี้'], ['candy', 'ลูกอม'], ['lolli', 'อมยิ้ม'], ['apple', 'แอปเปิ้ล'], ['corn', 'ข้าวโพด'],
+['carrot', 'แครอท'], ['tomatoW', 'มะเขือเทศ'], ['mushroom', 'เห็ด']];
+const MONEY = { 1: 'coin1', 2: 'coin2', 5: 'coin5', 10: 'coin10', 20: 'note20', 50: 'note50', 100: 'note100' };
+const isNote = (v) => v >= 20;
+const moneyArt = (v, size) => art(MONEY[v], size, isNote(v) ? 'note' : 'coin');
+const MAX_IN_TRAY = 20;
+class MarketGame extends BaseGame {
+start() {
+this.n = 5;
+this.drawerValues = diff.by([1, 2, 5], [1, 2, 5, 10], [1, 2, 5, 10, 20, 50]);
+this.used = [];
+this.next();
+}
+makeSale() {
+const [item, name] = pick(GOODS);
+let qty = 1, unit, paid;
+if (diff.easy) { unit = rnd(1, 9); paid = 10; }
+else if (diff.medium) { unit = rnd(4, 19); paid = 20; }
+else {
+do {
+unit = diff.table && diff.table <= 12 ? diff.table : rnd(2, 12);
+qty = rnd(2, 9);
+} while (unit * qty > 95 || unit * qty < 8);
+const t = unit * qty;
+paid = [20, 50, 100].find((p) => p > t);
+}
+const total = unit * qty;
+return { item, name, qty, unit, total, paid, change: paid - total, ans: total };
+}
+next() {
+this.stage.innerHTML = '';
+if (this.i >= this.n) return this.finish();
+this.showProgress();
+this.locked = false;
+this.tray = [];
+const q = this.q = this.makeSale();
+this.mon = pickFriend(this.used);
+this.used.push(this.mon.id);
+this.phase = diff.mult ? 'total' : 'change';
+const k = this.k = this.uiScale;
+this.root = el('div', 'mkt');
+this.root.style.setProperty('--k', k);
+this.root.innerHTML = `<div class="mktTop">
+<div class="cust">${petArt.html(this.mon, 96 * k)}<div class="bsay2" id="csay"></div></div>
+<div class="goods">${Array.from({ length: Math.min(q.qty, 9) }, () => art(q.item, (q.qty > 4 ? 34 : 46) * k)).join('')}</div>
+</div>
+<div class="mktMid" id="mid"></div>
+<div class="mktBtns" id="btns"></div>`;
+this.stage.appendChild(this.root);
+this.mid = this.root.querySelector('#mid');
+this.say = this.root.querySelector('#csay');
+if (this.phase === 'total') this.askTotal(); else this.askChange();
+}
+askTotal() {
+const q = this.q;
+this.say.innerHTML = `ขอซื้อ${q.name} <b>${q.qty} ชิ้น</b> ชิ้นละ <b>${q.unit} บาท</b> จ้า`;
+ui.setQuestion(`<div>🛒 ${q.qty} × ${q.unit} = <span class="qm">?</span> บาท</div><div class="hint" id="mh">ราคารวมเท่าไหร่นะ?</div>`);
+const mq = { a: q.qty, b: q.unit, op: '×', ans: q.total };
+this.opts = diff.options(mq, 3).map((v) => ({ v }));
+const row = el('div', 'ansrow mktopts');
+for (const o of this.opts) {
+o.el = el('button', 'ans');
+o.el.textContent = v2t(o.v);
+o.el.onclick = () => {
+if (this.locked || o.dead) return;
+if (o.v === q.total) {
+o.el.classList.add('right'); sound.good(); ui.toast(`ถูกต้อง! รวม ${q.total} บาท 👍`);
+this.locked = true;
+this.later(() => { this.locked = false; this.phase = 'change'; this.askChange(); }, 900);
+} else { o.dead = true; o.el.disabled = true; o.el.style.opacity = 0.4; shake(o.el); this.miss(); }
+};
+row.appendChild(o.el);
+}
+this.mid.innerHTML = '';
+this.mid.appendChild(row);
+}
+askChange() {
+const q = this.q;
+this.say.innerHTML = q.qty > 1
+? `รวม ${q.total} บาท นี่ <b>${q.paid} บาท</b> จ้า ทอนด้วยนะ`
+: `ขอซื้อ${q.name} ราคา <b>${q.total} บาท</b> นี่ <b>${q.paid} บาท</b> จ้า`;
+ui.setQuestion(`<div>🪙 ต้องทอนเงินกี่บาท?</div><div class="hint" id="mh">ลูกค้าจ่าย ${q.paid} บาท · ของราคา ${q.total} บาท${diff.easy ? ' · ลากเหรียญใส่ถาด' : ''}</div>`);
+this.mid.innerHTML = `<div class="paid"><small>ลูกค้าจ่าย</small>${moneyArt(q.paid, (isNote(q.paid) ? 92 : 64) * this.k)}</div>
+<div class="tray" id="tray"><div class="lab">🧺 ถาดทอนเงิน: <b id="tsum">0</b> บาท</div><div class="tcoins" id="tcoins"><span class="empty">ลากเหรียญมาใส่ตรงนี้</span></div></div>
+<div class="drawer" id="drawer"></div>`;
+this.trayEl = this.mid.querySelector('#tray');
+const drawer = this.mid.querySelector('#drawer');
+for (const v of this.drawerValues) {
+const b = el('div', 'dmoney' + (isNote(v) ? ' isnote' : ''), moneyArt(v, (isNote(v) ? 76 : 58) * this.k));
+b.onpointerdown = (e) => this.grab(e, v);
+drawer.appendChild(b);
+}
+const btns = this.root.querySelector('#btns');
+btns.innerHTML = '';
+const clear = el('button', 'checkBtn soft', '↩️ เอาออกหมด');
+clear.onclick = () => { if (this.locked) return; this.tray = []; this.renderTray(); sound.pop(); };
+const ok = el('button', 'checkBtn', '✅ ทอนเงิน');
+ok.onclick = () => this.check();
+btns.append(clear, ok);
+this.renderTray();
+}
+grab(e, v) {
+if (this.locked) return;
+const sr = this.stage.getBoundingClientRect();
+const ghost = el('div', 'mghost', moneyArt(v, (isNote(v) ? 84 : 62) * this.k));
+this.stage.appendChild(ghost);
+const place = (ev) => { ghost.style.left = ev.clientX - sr.left + 'px'; ghost.style.top = ev.clientY - sr.top + 'px'; };
+place(e);
+const x0 = e.clientX, y0 = e.clientY;
+dragPointer(e.currentTarget, e, {
+move: (ev) => { place(ev); this.trayEl.classList.toggle('over', inRect(ev, this.trayEl.getBoundingClientRect())); },
+end: (ev) => {
+ghost.remove(); this.trayEl.classList.remove('over');
+const tap = Math.hypot(ev.clientX - x0, ev.clientY - y0) < 10;
+if (tap || inRect(ev, this.trayEl.getBoundingClientRect(), 12)) this.add(v);
+},
+});
+}
+add(v) {
+if (this.tray.length >= MAX_IN_TRAY) { ui.toast('ถาดเต็มแล้ว ลองใช้เหรียญใหญ่ขึ้นนะ', 'bad'); return; }
+this.tray.push(v);
+sound.beep([900 + v * 8], 0.05);
+this.renderTray();
+}
+renderTray() {
+const box = this.mid.querySelector('#tcoins');
+if (!box) return;
+box.innerHTML = this.tray.length ? '' : '<span class="empty">ลากเหรียญมาใส่ตรงนี้</span>';
+[...this.tray].map((v, k) => [v, k]).sort((a, b) => b[0] - a[0]).forEach(([v, k]) => {
+const c = el('button', 'tmoney' + (isNote(v) ? ' isnote' : ''), moneyArt(v, (isNote(v) ? 58 : 40) * this.k));
+c.title = 'แตะเพื่อเอาออก';
+c.onclick = () => { if (this.locked) return; this.tray.splice(k, 1); sound.pop(); this.renderTray(); };
+box.appendChild(c);
+});
+this.mid.querySelector('#tsum').textContent = sum(this.tray);
+}
+check() {
+if (this.locked) return;
+const q = this.q, s = sum(this.tray);
+if (s === q.change) {
+this.locked = true; this.i++;
+this.say.innerHTML = `ขอบใจจ้า! ทอน ${q.change} บาท ถูกต้องเลย 💖`;
+this.root.querySelector('.cust .pet')?.classList.add('happy');
+this.praise(`ถูกต้อง! ${q.paid} − ${q.total} = ${q.change} บาท 🎉`);
+this.showProgress();
+this.later(() => this.next(), 1700);
+return;
+}
+shake(this.trayEl);
+this.miss(s === 0 ? 'ยังไม่ได้ใส่เงินทอนเลยนะ 🙂' : s < q.change ? 'ทอนน้อยไปนิด ลูกค้ายังได้ไม่ครบ 🙂' : 'ทอนเกินไปแล้ว เอาออกหน่อยนะ 😊');
+if (diff.easy || this.mist >= 3) ui.hint(`💡 ${q.paid} − ${q.total} = ? · ลองนับต่อจาก ${q.total} ไปให้ถึง ${q.paid}`);
+}
+multHint() { if (this.phase === 'total') ui.hint(diff.multHint({ a: this.q.qty, b: this.q.unit })); }
+buddyHelp() {
+const q = this.q;
+if (this.phase === 'total') {
+const o = this.pickWrong(this.opts, (x) => !x.dead);
+if (!o) return null;
+o.dead = true; o.el.disabled = true; o.el.style.opacity = 0.15;
+return HELP_REMOVED;
+}
+if (q.change <= 10) {
+const steps = Array.from({ length: q.change }, (_, k) => q.total + k + 1).join(', ');
+return `นับต่อจาก ${q.total}: ${steps} → นับได้ ${q.change} ครั้ง ต้องทอน ${q.change} บาท 🐾`;
+}
+const up = Math.ceil(q.total / 10) * 10;
+if (up === q.total) return `นับจาก ${q.total} เพิ่มทีละ 10 ไปให้ถึง ${q.paid} ได้ ${q.change / 10} ครั้ง = ทอน ${q.change} บาท 🐾`;
+return `นับจาก ${q.total} ไป ${up} ได้ ${up - q.total} แล้วจาก ${up} ไป ${q.paid} ได้อีก ${q.paid - up} รวมทอน ${q.change} บาท 🐾`;
+}
+}
+const v2t = (v) => `${v} บาท`;
+return { MarketGame };
+})();
+__mods["js/games/ShareGame.js"] = (() => {
+const { BaseGame } = __mods["js/games/BaseGame.js"];
+const { diff } = __mods["js/core/difficulty.js"];
+const { ui } = __mods["js/core/ui.js"];
+const { sound } = __mods["js/core/sound.js"];
+const { el, rnd, pick, shake, dragPointer, inRect } = __mods["js/core/utils.js"];
+const { art } = __mods["js/art/art.js"];
+const { petArt } = __mods["js/art/pets.js"];
+const { pickFriend } = __mods["js/games/ClockGame.js"];
+const THAI_FRAC = { 2: 'ครึ่งหนึ่ง', 4: 'หนึ่งในสี่', 6: 'หนึ่งในหก', 8: 'หนึ่งในแปด' };
+const SLICE_COLORS = ['#ffc9de', '#ffe8a3', '#c3fae8', '#d0ebff', '#e5dbff', '#ffd8a8', '#d3f9d8', '#fff0f6'];
+class ShareGame extends BaseGame {
+start() { this.n = 6; this.next(); }
+next() {
+this.stage.innerHTML = '';
+if (this.i >= this.n) return this.finish();
+this.showProgress();
+this.locked = false;
+this.mode = this.i % 2 === 0 ? 'cookie' : 'cake';
+if (this.mode === 'cookie') this.startCookies(); else this.startCake();
+}
+friends(k) {
+const list = [];
+for (let j = 0; j < k; j++) list.push(pickFriend(list.map((m) => m.id)));
+return list;
+}
+startCookies() {
+let n, each;
+do {
+if (diff.easy) { n = 2; each = rnd(1, 5); }
+else if (diff.medium) { n = rnd(2, 4); each = rnd(2, 6); }
+else { n = rnd(2, 5); each = diff.table >= 2 && diff.table <= 6 && Math.random() < 0.6 ? diff.table : rnd(2, 6); }
+} while (n * each > diff.by(10, 20, 24) || (this.q && this.q.n === n && this.q.each === each));
+const total = n * each;
+this.q = { n, each, total, ans: each };
+this.pals = this.friends(n);
+this.cookies = Array.from({ length: total }, () => -1); // -1 = still in the jar, else plate index
+ui.setQuestion(`<div>🍪 แบ่งคุกกี้ ${total} ชิ้น ให้เพื่อน ${n} ตัว เท่าๆ กัน</div><div class="hint" id="mh">ลากคุกกี้จากโหลไปวางบนจาน</div>`);
+const sc = this.k = this.uiScale;
+this.root = el('div', 'share');
+this.root.style.setProperty('--k', sc);
+this.root.innerHTML = `<div class="jar" id="jar"><div class="lab">🫙 โหลคุกกี้ (<b id="jarN"></b>)</div><div class="cbox" id="jarBox"></div></div>
+<div class="plates" id="plates" style="--np:${n};--npm:${n <= 3 ? n : n === 4 ? 2 : 3}">${this.pals.map((m, k) => `<div class="plate" data-k="${k}">
+<div class="pfriend">${petArt.html(m, 58 * sc)}</div><div class="pdish"><div class="cbox"></div></div><div class="pcount"></div></div>`).join('')}</div>
+<div class="mktBtns" id="btns"></div>`;
+this.stage.appendChild(this.root);
+const ok = el('button', 'checkBtn', '✅ แบ่งเสร็จแล้ว');
+ok.onclick = () => this.checkCookies();
+this.root.querySelector('#btns').appendChild(ok);
+this.renderCookies();
+}
+renderCookies() {
+const jar = this.root.querySelector('#jarBox'), plates = [...this.root.querySelectorAll('.plate')];
+const size = (this.q.total > 16 ? 34 : 42) * this.k;
+jar.innerHTML = ''; plates.forEach((p) => { p.querySelector('.cbox').innerHTML = ''; });
+this.cookies.forEach((at, idx) => {
+const c = el('div', 'cookie', art('cookie', size));
+c.onpointerdown = (e) => this.dragCookie(e, idx);
+(at < 0 ? jar : plates[at].querySelector('.cbox')).appendChild(c);
+});
+plates.forEach((p, k) => { p.querySelector('.pcount').textContent = `${this.cookies.filter((a) => a === k).length} ชิ้น`; });
+this.root.querySelector('#jarN').textContent = `เหลือ ${this.cookies.filter((a) => a < 0).length}`;
+}
+dragCookie(e, idx) {
+if (this.locked) return;
+const sr = this.stage.getBoundingClientRect(), from = this.cookies[idx];
+const ghost = el('div', 'mghost', art('cookie', 50 * this.k));
+e.currentTarget.style.opacity = 0.25;
+this.stage.appendChild(ghost);
+const place = (ev) => { ghost.style.left = ev.clientX - sr.left + 'px'; ghost.style.top = ev.clientY - sr.top + 'px'; };
+place(e);
+const x0 = e.clientX, y0 = e.clientY;
+const targets = () => [...this.root.querySelectorAll('.plate')].map((p, k) => [k, p]).concat([[-1, this.root.querySelector('#jar')]]);
+const hit = (ev) => targets().find(([, node]) => inRect(ev, node.getBoundingClientRect(), 6));
+dragPointer(e.currentTarget, e, {
+move: (ev) => { place(ev); const h = hit(ev); targets().forEach(([, n]) => n.classList.toggle('over', !!h && n === h[1])); },
+end: (ev) => {
+ghost.remove();
+targets().forEach(([, n]) => n.classList.remove('over'));
+const h = hit(ev), tap = Math.hypot(ev.clientX - x0, ev.clientY - y0) < 10;
+if (tap && from >= 0) this.cookies[idx] = -1; // tap a cookie on a plate → back to the jar
+else if (h && h[0] !== from) { this.cookies[idx] = h[0]; sound.pop(); }
+this.renderCookies();
+},
+});
+}
+checkCookies() {
+if (this.locked) return;
+const q = this.q, left = this.cookies.filter((a) => a < 0).length;
+const counts = Array.from({ length: q.n }, (_, k) => this.cookies.filter((a) => a === k).length);
+if (left === 0 && counts.every((c) => c === q.each)) {
+this.locked = true; this.i++;
+this.root.querySelectorAll('.plate .pet').forEach((p) => p.classList.add('happy'));
+const how = diff.mult ? `${q.total} ÷ ${q.n} = ${q.each} เพราะ ${q.n} × ${q.each} = ${q.total}`
+: `${Array(q.n).fill(q.each).join(' + ')} = ${q.total}`;
+ui.setQuestion(`<div>🍪 ได้ตัวละ ${q.each} ชิ้น เท่ากันเลย!</div><div class="hint" id="mh">${how}</div>`);
+this.praise(); this.showProgress();
+this.later(() => this.next(), 2000);
+return;
+}
+shake(this.root.querySelector(left ? '#jar' : '#plates'));
+const max = Math.max(...counts), min = Math.min(...counts);
+this.miss(left ? `ยังเหลือคุกกี้ในโหลอีก ${left} ชิ้น แบ่งให้หมดนะ 🍪` : max !== min ? 'บางตัวได้มากกว่าเพื่อน ลองย้ายให้เท่ากันนะ 🙂' : 'ลองนับอีกทีนะ');
+}
+startCake() {
+const choices = diff.by([2, 4], [2, 4, 8], [4, 6, 8]);
+let n;
+do n = pick(choices); while (this.lastCake === n && choices.length > 1);
+this.lastCake = n;
+this.q = { n, ans: n };
+this.snapDeg = diff.easy ? 45 : 15;
+this.cuts = []; // angles (0..179) of straight cuts through the centre
+this.pals = this.friends(Math.min(n, 8));
+ui.setQuestion(`<div>🍰 ตัดเค้กให้เพื่อน ${n} ตัว ได้ชิ้นเท่ากัน</div><div class="hint" id="mh">ปัด${n > 2 ? 'หลายๆ ครั้ง' : ''}ผ่านกลางเค้กเพื่อตัด · ต้องได้ ${n} ชิ้น</div>`);
+this.root = el('div', 'share cakeround');
+this.root.style.setProperty('--k', this.uiScale);
+this.root.innerHTML = `<div class="cakepals">${this.pals.map((m) => petArt.html(m, 52 * this.uiScale)).join('')}</div>
+<div class="cakebox" id="cakebox"></div><div class="mktBtns" id="btns"></div>`;
+this.stage.appendChild(this.root);
+const undo = el('button', 'checkBtn soft', '↩️ เริ่มตัดใหม่');
+undo.onclick = () => { if (this.locked) return; this.cuts = []; this.guides = false; this.drawCake(); sound.pop(); };
+const ok = el('button', 'checkBtn', '✅ ตัดเสร็จแล้ว');
+ok.onclick = () => this.checkCake();
+this.root.querySelector('#btns').append(undo, ok);
+this.guides = false;
+this.drawCake();
+}
+drawCake(done = false) {
+const box = this.root.querySelector('#cakebox'), R = 80;
+const line = (deg, cls, ext = 92) => {
+const a = deg * Math.PI / 180, dx = Math.cos(a) * ext, dy = Math.sin(a) * ext;
+return `<line class="${cls}" x1="${100 - dx}" y1="${100 - dy}" x2="${100 + dx}" y2="${100 + dy}"/>`;
+};
+let body;
+if (done) { // slices pull apart a little, each its own colour
+const k = this.q.n, step = 360 / k;
+body = Array.from({ length: k }, (_, j) => {
+const a0 = (this.cuts[0] + j * step) * Math.PI / 180, a1 = a0 + step * Math.PI / 180, mid = (a0 + a1) / 2;
+const tx = Math.cos(mid) * 7, ty = Math.sin(mid) * 7;
+const p = (a) => `${100 + R * Math.cos(a)} ${100 + R * Math.sin(a)}`;
+const lx = 100 + Math.cos(mid) * R * 0.58, ly = 100 + Math.sin(mid) * R * 0.58;
+return `<g transform="translate(${tx} ${ty})"><path d="M100 100 L${p(a0)} A${R} ${R} 0 ${step > 180 ? 1 : 0} 1 ${p(a1)}Z" fill="${SLICE_COLORS[j % 8]}" stroke="#4a3b5c" stroke-width="3" stroke-linejoin="round"/>`
++ `<circle cx="${lx}" cy="${ly}" r="7" fill="#ff5d73" stroke="#4a3b5c" stroke-width="2"/>${diff.easy ? '' : `<text x="${100 + Math.cos(mid) * R * 0.85}" y="${100 + Math.sin(mid) * R * 0.85 + 4}" text-anchor="middle" class="frac">1/${k}</text>`}</g>`;
+}).join('');
+} else {
+const berries = Array.from({ length: 12 }, (_, j) => {
+const a = (j / 12) * Math.PI * 2;
+return `<circle cx="${100 + 64 * Math.cos(a)}" cy="${100 + 64 * Math.sin(a)}" r="7" fill="#ff5d73" stroke="#4a3b5c" stroke-width="2"/><circle cx="${98 + 64 * Math.cos(a)}" cy="${98 + 64 * Math.sin(a)}" r="2" fill="#fff"/>`;
+}).join('');
+const guide = this.guides ? Array.from({ length: this.q.n / 2 }, (_, j) => line(j * 360 / this.q.n, 'cguide')).join('') : '';
+body = `<circle cx="100" cy="100" r="${R}" fill="#ffc9de" stroke="#4a3b5c" stroke-width="3"/><circle cx="100" cy="100" r="${R}" fill="url(#zSph)"/>`
++ `<circle cx="100" cy="100" r="48" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="2 9" stroke-linecap="round" opacity=".9"/>${berries}`
++ `<circle cx="100" cy="100" r="9" fill="#fff3bf" stroke="#4a3b5c" stroke-width="2"/>${guide}${this.cuts.map((d) => line(d, 'ccut', R + 4)).join('')}`;
+}
+box.innerHTML = `<svg viewBox="0 0 200 200"><ellipse cx="100" cy="104" rx="96" ry="94" fill="url(#zShd)"/><circle cx="100" cy="100" r="94" fill="#fff" stroke="#dee2e6" stroke-width="3"/>${body}<line class="knife" x1="0" y1="0" x2="0" y2="0"/></svg>`;
+this.cakeSvg = box.querySelector('svg');
+if (!done) this.cakeSvg.onpointerdown = (e) => this.swipe(e);
+}
+toCake(ev) {
+const m = this.cakeSvg.getScreenCTM()?.inverse();
+if (m) { const p = new DOMPoint(ev.clientX, ev.clientY).matrixTransform(m); return { x: p.x, y: p.y }; }
+const r = this.cakeSvg.getBoundingClientRect(), k = Math.min(r.width, r.height) / 200;
+return { x: (ev.clientX - r.left - (r.width - 200 * k) / 2) / k, y: (ev.clientY - r.top - (r.height - 200 * k) / 2) / k };
+}
+swipe(e) {
+if (this.locked) return;
+const knife = this.cakeSvg.querySelector('.knife'), p0 = this.toCake(e);
+let p1 = p0;
+const show = () => { knife.setAttribute('x1', p0.x); knife.setAttribute('y1', p0.y); knife.setAttribute('x2', p1.x); knife.setAttribute('y2', p1.y); };
+dragPointer(this.cakeSvg, e, {
+move: (ev) => { p1 = this.toCake(ev); show(); },
+end: (ev) => { p1 = this.toCake(ev); this.cut(p0, p1); },
+});
+}
+cut(p0, p1) {
+const dx = p1.x - p0.x, dy = p1.y - p0.y, len = Math.hypot(dx, dy);
+if (len < 70) { this.drawCake(); if (len > 8) ui.toast('ปัดให้ยาวผ่านเค้กไปเลยนะ 🔪', 'bad'); return; }
+const dist = Math.abs(dx * (p0.y - 100) - dy * (p0.x - 100)) / len; // centre → line distance
+if (dist > 26) { this.drawCake(); ui.toast('ตัดให้ผ่านตรงกลางเค้กนะ (จุดสีเหลือง) 🎯', 'bad'); sound.bad(); return; }
+let deg = ((Math.atan2(dy, dx) * 180 / Math.PI) % 180 + 180) % 180;
+deg = (Math.round(deg / this.snapDeg) * this.snapDeg) % 180;
+if (this.cuts.includes(deg)) { this.drawCake(); ui.toast('ตรงนี้ตัดไปแล้วนะ', 'bad'); return; }
+this.cuts.push(deg);
+sound.beep([500, 300], 0.06, 'triangle');
+this.drawCake();
+ui.hint(`ตอนนี้ได้ ${this.cuts.length * 2} ชิ้น · ต้องได้ ${this.q.n} ชิ้น`);
+}
+checkCake() {
+if (this.locked) return;
+const n = this.q.n, k = this.cuts.length, pieces = k ? k * 2 : 1;
+const sorted = [...this.cuts].sort((a, b) => a - b);
+const gaps = sorted.map((d, j) => (j + 1 < k ? sorted[j + 1] : sorted[0] + 180) - d);
+if (pieces === n && gaps.every((g) => g === 180 / k)) {
+this.locked = true; this.i++;
+this.cuts = sorted;
+this.drawCake(true);
+this.root.querySelectorAll('.cakepals .pet').forEach((p) => p.classList.add('happy'));
+ui.setQuestion(`<div>🍰 ได้ ${n} ชิ้นเท่ากันเป๊ะ!</div><div class="hint" id="mh">${diff.easy ? 'ทุกตัวได้คนละ 1 ชิ้นเท่ากัน' : `แต่ละตัวได้ 1/${n} (${THAI_FRAC[n]}) ของเค้ก`}</div>`);
+this.praise(); this.showProgress();
+this.later(() => this.next(), 2200);
+return;
+}
+shake(this.root.querySelector('#cakebox'));
+this.miss(pieces !== n ? `ตอนนี้ได้ ${pieces} ชิ้น แต่มีเพื่อน ${n} ตัวนะ` : 'ได้ครบแล้ว แต่ชิ้นยังไม่เท่ากันนะ ลองตัดใหม่ 🙂');
+}
+multHint() {}
+buddyHelp() {
+if (this.locked) return null;
+if (this.mode === 'cake') {
+this.guides = true; this.drawCake();
+return `ตัดตามเส้นประนะ ${this.q.n / 2} ครั้ง จะได้ ${this.q.n} ชิ้นเท่ากัน 🐾`;
+}
+let dealt = 0;
+for (let k = 0; k < this.q.n; k++) {
+const idx = this.cookies.indexOf(-1);
+if (idx < 0) break;
+this.cookies[idx] = k; dealt++;
+}
+if (!dealt) return `ลองนับให้ทุกจานมี ${this.q.each} ชิ้นนะ 🐾`;
+this.renderCookies();
+return 'แจกทีละ 1 ชิ้น วนให้ครบทุกจาน แบบนี้ไปจนคุกกี้หมดนะ 🍪';
+}
+}
+return { ShareGame };
+})();
 __mods["js/app.js"] = (() => {
 const { $, $$ } = __mods["js/core/utils.js"];
 const { ui } = __mods["js/core/ui.js"];
@@ -3463,9 +4237,13 @@ const { PizzaGame } = __mods["js/games/PizzaGame.js"];
 const { MineGame } = __mods["js/games/MineGame.js"];
 const { MyRoom } = __mods["js/games/MyRoom.js"];
 const { Leaderboard } = __mods["js/games/Leaderboard.js"];
+const { ClockGame } = __mods["js/games/ClockGame.js"];
+const { MarketGame } = __mods["js/games/MarketGame.js"];
+const { ShareGame } = __mods["js/games/ShareGame.js"];
 const ACTIVITIES = {
 balloon: BalloonGame, drag: DragGame, dots: DotsGame, race: RaceGame, eggs: EggFarm, ghost: GhostGame,
 tower: TowerGame, pizza: PizzaGame, mine: MineGame, room: MyRoom, board: Leaderboard,
+clock: ClockGame, market: MarketGame, share: ShareGame,
 };
 const ENERGY_PER_GAME = 3;
 const MIN_SECONDS_PER_ROUND = 0.8, MAX_COINS_PER_GAME = 200, MAX_POINTS_PER_GAME = 200;
